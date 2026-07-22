@@ -226,6 +226,50 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
           ))}
         </div>
 
+        {/* Sovereign Core Section — embedded directly in Achievements */}
+        <div className="space-y-4 pt-2">
+          <div className="flex items-center gap-2.5 pb-3 border-b border-slate-200/80">
+            <Cpu className="w-5 h-5 text-purple-600" />
+            <h3 className="text-lg font-black text-slate-900 tracking-tight">Sovereign Core & AI Innovations</h3>
+            <span className="ml-auto px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-black border border-purple-200">
+              Sovereign Core Selected
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {SOVEREIGN_INNOVATIONS.sovereignProjects.map((proj, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-3xl bg-gradient-to-br from-white via-purple-50/20 to-blue-50/30 border-2 border-purple-200 shadow-md hover:shadow-xl hover:border-purple-400 transition-all space-y-3"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="px-3.5 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-black border border-purple-200">
+                    {proj.badge}
+                  </span>
+                  <Cpu className="w-5 h-5 text-purple-600" />
+                </div>
+                <h3 className="text-lg font-extrabold text-slate-900">{proj.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">{proj.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* WatsonX Challenge */}
+          <div className="p-6 rounded-3xl bg-white border-2 border-slate-200/90 shadow-md flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="flex items-center gap-4">
+              <div className="p-3.5 rounded-2xl bg-amber-100 text-amber-800 border border-amber-200 shrink-0">
+                <Trophy className="w-7 h-7 text-amber-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-extrabold text-slate-900">{SOVEREIGN_INNOVATIONS.watsonx.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">{SOVEREIGN_INNOVATIONS.watsonx.desc}</p>
+              </div>
+            </div>
+            <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-800 text-xs font-black shrink-0 border border-slate-200">
+              Global Competition
+            </span>
+          </div>
+        </div>
+
         {/* CAE Deep Dive Highlight */}
         <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 text-white shadow-xl space-y-3 relative overflow-hidden">
           <div className="flex items-center justify-between">
@@ -271,9 +315,6 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                 <span className="px-3 py-1 rounded-full bg-blue-100 text-[#0f62fe] text-xs font-black border border-blue-200">
                   {item.status}
                 </span>
-                <span className="text-xs sm:text-sm font-black text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
-                  {item.progress}% Complete
-                </span>
               </div>
 
               <h3 className="text-lg font-extrabold text-slate-900">
@@ -283,80 +324,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                 {item.desc}
               </p>
-
-              {/* Progress Bar */}
-              <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
-                <div
-                  className="bg-[#0f62fe] h-full rounded-full transition-all duration-500 shadow-xs"
-                  style={{ width: `${item.progress}%` }}
-                />
-              </div>
             </div>
           ))}
-        </div>
-      </div>
-    );
-  }
-
-  /* SOVEREIGN & INNOVATIONS PANEL */
-  if (type === 'sovereign-innovations') {
-    return (
-      <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <Sparkles className="w-6 h-6 text-[#0f62fe]" />
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Sovereign Core & AI Innovations</h2>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
-              Selected Sovereign Core projects and hackathon challenge participations
-            </p>
-          </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-purple-100 text-purple-900 text-xs sm:text-sm font-black border border-purple-200">
-            Sovereign Core Selected
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SOVEREIGN_INNOVATIONS.sovereignProjects.map((proj, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-3xl bg-gradient-to-br from-white via-slate-50 to-blue-50/40 border-2 border-slate-200/90 shadow-md hover:shadow-xl hover:border-purple-300 transition-all space-y-3"
-            >
-              <div className="flex items-center justify-between">
-                <span className="px-3.5 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-black border border-purple-200">
-                  {proj.badge}
-                </span>
-                <Cpu className="w-6 h-6 text-[#0f62fe]" />
-              </div>
-              <h3 className="text-lg font-extrabold text-slate-900">
-                {proj.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                {proj.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* WatsonX Challenge Banner */}
-        <div className="p-6 rounded-3xl bg-white border-2 border-slate-200/90 shadow-md flex flex-col sm:flex-row items-center justify-between gap-5">
-          <div className="flex items-center gap-4">
-            <div className="p-3.5 rounded-2xl bg-amber-100 text-amber-800 border border-amber-200 shrink-0">
-              <Trophy className="w-7 h-7 text-amber-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-extrabold text-slate-900">
-                {SOVEREIGN_INNOVATIONS.watsonx.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
-                {SOVEREIGN_INNOVATIONS.watsonx.desc}
-              </p>
-            </div>
-          </div>
-          <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-800 text-xs font-black shrink-0 border border-slate-200">
-            Global Competition
-          </span>
         </div>
       </div>
     );

@@ -50,13 +50,12 @@ export interface MemberProfile {
 }
 
 
-export type DashboardTab = 
+export type DashboardTab =
   | 'org-structure'
   | 'innovation-proposals'
   | 'productivity'
   | 'achievements'
   | 'in-progress'
-  | 'sovereign-innovations'
   | 'collaborations'
   | 'challenges'
   | 'ai-adoption'

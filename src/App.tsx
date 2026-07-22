@@ -158,11 +158,6 @@ export default function App() {
             <ExecutivePanels type="in-progress" onSelectMember={handleSelectMember} />
           )}
 
-          {/* Section 4: Sovereign Core & Innovations */}
-          {activeTab === 'sovereign-innovations' && (
-            <ExecutivePanels type="sovereign-innovations" onSelectMember={handleSelectMember} />
-          )}
-
           {/* Section 5: Global Cross-Team Collaborations */}
           {activeTab === 'collaborations' && (
             <ExecutivePanels type="collaborations" onSelectMember={handleSelectMember} />

@@ -1,14 +1,13 @@
 import React from 'react';
 import { DashboardTab } from '../types';
-import { 
-  Users, 
-  Trophy, 
-  Clock, 
-  ShieldAlert, 
-  Globe2, 
-  Sparkles, 
-  Bot, 
-  Camera, 
+import {
+  Users,
+  Trophy,
+  Clock,
+  ShieldAlert,
+  Globe2,
+  Bot,
+  Camera,
   Plus,
   Database,
   ChevronLeft,
@@ -35,9 +34,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
 }) => {
   const navItems: { id: DashboardTab; label: string; icon: React.FC<{ className?: string }>; badge?: string }[] = [
     { id: 'org-structure', label: 'Team Structure', icon: Users, badge: 'Main' },
-    { id: 'achievements', label: 'Achievements', icon: Trophy, badge: '3 GA' },
-    { id: 'in-progress', label: 'In Progress', icon: Clock, badge: '4 Active' },
-    { id: 'sovereign-innovations', label: 'Sovereign Core', icon: Sparkles, badge: '2 Selected' },
+    { id: 'achievements', label: 'Achievements', icon: Trophy, badge: 'GA + Sovereign' },
+    { id: 'in-progress', label: 'In Progress', icon: Clock, badge: 'Active' },
     { id: 'collaborations', label: 'Global Synergy', icon: Globe2 },
     { id: 'challenges', label: 'Process & PDLC', icon: ShieldAlert },
     { id: 'innovation-proposals', label: 'Innovation Proposals', icon: Lightbulb, badge: 'New' },
