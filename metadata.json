@@ -1,0 +1,6 @@
+{
+  "name": "IBM Db2 Lucknow Team Showcase",
+  "description": "Executive review dashboard for IBM Db2 Lucknow featuring project-based team structure, yearly achievements, 3D image carousel scroll, active initiatives, global collaborations, and AI adoption metrics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
