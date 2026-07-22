@@ -161,7 +161,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     title: 'Software Engineer',
     role: 'IBM AI Foundry Team & AI Ecosystems',
     bio: 'Selected from Db2 Lucknow for the prestigious IBM AI Foundry team! Co-author of IP.com technical publication on Self-Healing Transaction Agents and contributor to Haystack, CrewAI, and n8n connectors.',
-    avatarUrl: '/team_photos/Geetika chugh.jpg',
+    avatarUrl: '/team_photos/Geetika_Chugh.jpg',
     projects: ['IBM AI Foundry Team', 'Haystack Integration', 'CrewAI Framework', 'n8n Workflow Connector', 'IP.com Technical Publication'],
     skills: ['AI Foundry', 'n8n Automation', 'Haystack RAG', 'TypeScript', 'Db2 Integration', 'IP.com Author']
   },
@@ -170,7 +170,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     title: 'Software Engineer',
     role: 'Vector Support & IP.com Technical Publication Author',
     bio: 'Co-author of IP.com technical publication on Self-Healing Transaction Agents. Contributes to Db2 Vector index embeddings and similarity search.',
-    avatarUrl: '/team_photos/Khushi Tyagi.jpg',
+    avatarUrl: '/team_photos/Khushi_Tyagi.jpg',
     projects: ['Db2 Vector Support', 'IP.com Technical Publication'],
     skills: ['Embeddings', 'Vector Search', 'C++', 'IP.com Author']
   },
@@ -206,7 +206,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     title: 'Software Engineer',
     role: 'Db2 Dev Extension & ARM Porting',
     bio: 'Contributes to both Db2 Dev Extension features and ARM64 platform pre-build validation.',
-    avatarUrl: '/team_photos/Kunal  Gola.jpg',
+    avatarUrl: '/team_photos/Kunal_Gola.jpg',
     isExMember: true,
     exTag: 'Ex-member',
     projects: ['IBM Db2 Dev Extension', 'Db2 Linux ARM Team'],
@@ -280,7 +280,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     title: 'Software Engineer',
     role: 'Db2 Linux ARM Team',
     bio: 'Focuses on cross-compilation toolchains and Linux ARM64 system libraries for Db2.',
-    avatarUrl: '/team_photos/Sadiq .jpg',
+    avatarUrl: '/team_photos/Sadiq.jpg',
     projects: ['Db2 Linux ARM Team'],
     skills: ['Linux Systems', 'C/C++', 'ARM Architecture']
   },
