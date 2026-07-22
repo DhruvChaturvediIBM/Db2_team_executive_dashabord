@@ -23,7 +23,7 @@ export const ParallaxHero: React.FC<ParallaxHeroProps> = ({
       {/* Background Image Layer with IBM Light Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-15 scale-105 transition-transform duration-1000"
-        style={{ backgroundImage: `url('/1.jpg')` }}
+        style={{ backgroundImage: `url('/IBM DB2 TECH IMAGES/team_photo.jpeg')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#f4f4f4]/90 via-[#f4f4f4]/95 to-[#f4f4f4]" />
 

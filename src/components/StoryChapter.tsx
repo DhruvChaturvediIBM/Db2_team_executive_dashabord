@@ -40,7 +40,7 @@ export const StoryChapter: React.FC<StoryChapterProps> = ({
   };
 
   // Select backdrop image for chapter
-  const chapterBgImage = chapter.featuredPhotos[0]?.imageUrl || '/1.jpg';
+  const chapterBgImage = chapter.featuredPhotos[0]?.imageUrl || '/IBM DB2 TECH IMAGES/team_photo.jpeg';
 
   return (
     <section
