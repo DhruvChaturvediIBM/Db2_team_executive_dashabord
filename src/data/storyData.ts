@@ -15,8 +15,8 @@ export const LEADERSHIP_NODES: LeadershipNode[] = [
   },
   {
     name: 'Anant Vikram Singh',
-    title: 'Senior Software Engineer',
-    role: 'Db2 Dev Extension & AI Ecosystem Lead',
+    title: 'Junior Architect / Team Lead',
+    role: 'Db2 Dev Extension & AI Ecosystems',
     avatarUrl: '/team_photos/Anant.jpg'
   }
 ];
@@ -46,7 +46,8 @@ export const PROJECT_TEAMS: ProjectTeam[] = [
     members: [
       'Sadiq Shaik',
       'Aarchi Choudhury',
-      'Kunal Gola'
+      'Kunal Gola',
+      'Pawan Thakur'
     ]
   },
   {
@@ -118,7 +119,7 @@ export const HIGHLIGHT_KEYNOTE = {
 export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
   'Anant Vikram Singh': {
     name: 'Anant Vikram Singh',
-    title: 'Software Engineer',
+    title: 'Junior Architect / Team Lead',
     role: 'Db2 Dev Extension & AI Ecosystems',
     bio: 'Engineer for IBM Db2 Dev Extension with Text-to-SQL and Genius Hub integration. Drives AI ecosystem connectors across Langflow, Haystack, CrewAI, and n8n.',
     avatarUrl: '/team_photos/Anant.jpg',
@@ -346,7 +347,8 @@ export const ACHIEVEMENTS_DATA = [
     details: [
       'Official Langflow Db2 connector delivered and released live in production.',
       'Surpassed 30,000+ downloads for lfx-ibm package across PyPI & npm ecosystem.',
-      'Live Download Stats: https://pepy.tech/projects/lfx-ibm?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=monthly&viewType=line&versions=Total%2C0.*'
+      'Live Download Stats:',
+      'https://pepy.tech/projects/lfx-ibm?timeRange=threeMonths&category=version&includeCIDownloads=true&granularity=monthly&viewType=line&versions=Total%2C0.*'
     ]
   },
   {
@@ -356,7 +358,8 @@ export const ACHIEVEMENTS_DATA = [
     metric: 'Merged into Core',
     details: [
       'Official Db2 connector merged directly into Haystack core framework repository.',
-      'Enables enterprise developers globally to build RAG applications on Db2.'
+      'Enables enterprise developers globally to build RAG applications on Db2.',
+      'Gained significant downloads post-merge; official IBM release is still pending.',
     ]
   },
   {
@@ -375,21 +378,53 @@ export const ACHIEVEMENTS_DATA = [
     title: 'IBM Db2 Developer Extension — GA Released on VS Code Marketplace 🚀',
     metric: 'GA Product Released',
     details: [
-      'Successfully shipped IBM Db2 Developer Extension to General Availability with 2 security patch releases.',
-      'Extension is live on the VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=IBM.db2-for-luw',
-      'Features include Text-to-SQL via Genius Hub, connection manager, schema browser, and SQL execution engine.',
-      'Delivered to enterprise database developers worldwide with ongoing active engineering and feature development.'
+      '95%+ code coverage · Zero security vulnerabilities · One-click local install for Db2 Community Edition.',
+      'Growth target: Scale to 1M+ developers via blogs, demos & AI-powered Text-to-SQL + Genius Hub.',
+      'Developer Productivity: Faster onboarding with IBM BOB — context-aware codebase understanding for quicker ramp-up & development.',
+    ],
+    backDetails: {
+      customerIssues: {
+        total: 12,
+        bugs: { total: 5, fixed: 4, inProgress: 1 },
+        enhancements: { total: 4, completed: 2, inProgress: 2 },
+      },
+      growthStrategy: [
+        'Expand community adoption through blogs, demos, webinars, tutorials & developer advocacy.',
+        'Build a rich connector ecosystem with Langflow, n8n, CrewAI & LangChain.',
+        'Enhance AI-powered developer experience with Text-to-SQL & Genius Hub integration.',
+        'Leverage telemetry-driven insights to optimize onboarding, retention & adoption.',
+        'Organize developer hackathons using IBM Db2 + Developer Extension for hands-on adoption.',
+      ],
+    },
+  },
+  {
+    id: 'ach-conf-1',
+    category: 'Conference & Thought Leadership',
+    title: 'IBM Db2 Modern Features Presented at ISA IBM Data & AI User Group Meeting',
+    metric: 'IBM Technical Exchange',
+    details: [
+      'Presented alongside Deepak at the ISA IBM Data & AI User Group Meeting, sponsored by IBM Technical Exchange.',
+      'Showcased Apache Iceberg integration, AI capabilities in Db2, and Vector Search to a client audience.',
+      'Demonstrated the Db2 Intelligence Center and modern data platform enhancements.',
+      'Highlighted how Db2 features enable intelligent, scalable, and AI-ready data management.',
     ]
   },
   {
-    id: 'ach-sovereign',
-    category: 'Sovereign Core Selection',
-    title: 'Two Projects Selected for IBM Sovereign Core Program 🛡️',
-    metric: 'Sovereign Core Selected',
+    id: 'ach-conf-2',
+    category: 'Conference & Thought Leadership',
+    title: 'Conference Talk 2 — Details Coming Soon',
+    metric: 'Coming Soon',
     details: [
-      'Sovereign AI Vectorless Document Intelligence: Selected for Sovereign Core — high-security vectorless document extraction and intelligence engine.',
-      'Db2 Sovereign Vector RAG Service: Selected for Sovereign Core — air-gapped enterprise RAG service powered by Db2 vector search.',
-      'Sovereign Core selection represents IBM\'s highest trust-tier for national and enterprise AI infrastructure projects.'
+      'Details for this conference presentation will be added shortly.',
+    ]
+  },
+  {
+    id: 'ach-conf-3',
+    category: 'Conference & Thought Leadership',
+    title: 'Conference Talk 3 — Details Coming Soon',
+    metric: 'Coming Soon',
+    details: [
+      'Details for this conference presentation will be added shortly.',
     ]
   },
   {

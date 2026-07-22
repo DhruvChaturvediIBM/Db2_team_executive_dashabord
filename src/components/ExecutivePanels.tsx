@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   ACHIEVEMENTS_DATA, 
   IN_PROGRESS_DATA, 
@@ -61,6 +61,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
         if (part.includes('ip.com')) label = '📄 View Publication on IP.com (00278081D)';
         else if (part.includes('linkedin')) label = '🔗 View Official LinkedIn Post';
         else if (part.includes('instagram')) label = '📸 View Official Instagram Post';
+        else if (part.includes('pepy.tech')) label = '📊 View Live Download Stats on Pepy.tech';
+        else if (part.includes('marketplace.visualstudio.com')) label = '🛒 View on VS Code Marketplace';
 
         return (
           <a
@@ -116,6 +118,9 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
 
   /* ACHIEVEMENTS PANEL */
   if (type === 'achievements') {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [gaFlipped, setGaFlipped] = useState(false);
+
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
         <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
@@ -129,101 +134,212 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
             </p>
           </div>
           <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0f62fe] text-xs sm:text-sm font-black border border-blue-200">
-            2025 and early 2026 Team Milestone.....
+            2025 and early 2026 Team Milestone
           </span>
         </div>
 
         {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ACHIEVEMENTS_DATA.map((ach) => (
-            <div
-              key={ach.id}
-              className={`p-6 sm:p-7 rounded-3xl bg-white border-2 border-slate-200/90 shadow-sm hover:shadow-xl transition-all space-y-4 relative overflow-hidden flex flex-col justify-between ${
-                ach.id === 'ach-ipcom' 
-                  ? 'border-indigo-300 bg-gradient-to-br from-white via-indigo-50/20 to-blue-50/30' 
-                  : ach.id === 'ach-social'
-                  ? 'border-purple-300 bg-gradient-to-br from-white via-purple-50/20 to-pink-50/30'
-                  : 'hover:border-blue-400'
-              }`}
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
-                  <span className={`px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border ${
-                    ach.id === 'ach-ipcom'
-                      ? 'bg-indigo-100 text-indigo-800 border-indigo-200'
-                      : ach.id === 'ach-social'
-                      ? 'bg-purple-100 text-purple-800 border-purple-200'
-                      : 'bg-blue-100 text-[#0f62fe] border-blue-200'
-                  }`}>
-                    {ach.category}
-                  </span>
-                  <span className="text-xs sm:text-sm font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 shadow-2xs">
-                    {ach.metric}
-                  </span>
+          {ACHIEVEMENTS_DATA.map((ach) => {
+
+            /* ── FLIP CARD for ach-ga ── */
+            if (ach.id === 'ach-ga') {
+              const bd = (ach as any).backDetails;
+              return (
+                <div key={ach.id} className="perspective-1000 min-h-[420px]">
+                  <div
+                    className="relative w-full h-full transition-transform duration-700 preserve-3d"
+                    style={{ transform: gaFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '420px' }}
+                  >
+                    {/* FRONT */}
+                    <div className="absolute inset-0 backface-hidden rounded-3xl bg-white border-2 border-blue-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
+                          <span className="px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border bg-blue-100 text-[#0f62fe] border-blue-200">
+                            {ach.category}
+                          </span>
+                          <span className="text-xs sm:text-sm font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 shadow-2xs">
+                            {ach.metric}
+                          </span>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">{ach.title}</h3>
+                        <ul className="space-y-3 pt-1">
+                          {ach.details.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-sm text-slate-800 font-medium leading-relaxed">
+                              <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-[#0f62fe]" />
+                              <span>{renderDetailText(item)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="mt-4 flex gap-2">
+                        <a
+                          href="https://marketplace.visualstudio.com/items?itemName=IBM.db2-for-luw"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-black text-xs transition-all border border-slate-200"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                          VS Code Marketplace
+                        </a>
+                        <button
+                          onClick={() => setGaFlipped(true)}
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-[#0f62fe] hover:bg-blue-700 text-white font-black text-xs transition-all shadow-md"
+                        >
+                          <TrendingUp className="w-3.5 h-3.5 shrink-0" />
+                          Growth Strategy & Stats
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* BACK */}
+                    <div
+                      className="absolute inset-0 backface-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-900 text-white border-2 border-blue-500/40 shadow-xl flex flex-col p-5 sm:p-6 overflow-y-auto"
+                      style={{ transform: 'rotateY(180deg)' }}
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-black uppercase tracking-widest text-blue-300">Deep Dive</span>
+                        <button
+                          onClick={() => setGaFlipped(false)}
+                          className="text-xs font-black text-blue-300 hover:text-white transition-colors px-3 py-1 rounded-lg border border-blue-500/40 hover:border-white/40"
+                        >
+                          ← Back
+                        </button>
+                      </div>
+
+                      {/* Customer Issues */}
+                      <div className="mb-4 p-3 rounded-2xl bg-white/5 border border-white/10">
+                        <p className="text-[11px] font-black text-blue-200 uppercase tracking-wider mb-2">
+                          Customer Issues — {bd.customerIssues.total} Total
+                        </p>
+                        <div className="flex flex-wrap gap-2 text-[11px] font-semibold">
+                          <span className="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-200 border border-red-400/20">
+                            🐛 {bd.customerIssues.bugs.total} Bugs · {bd.customerIssues.bugs.fixed} fixed · {bd.customerIssues.bugs.inProgress} in progress
+                          </span>
+                          <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 border border-emerald-400/20">
+                            ✨ {bd.customerIssues.enhancements.total} Enhancements · {bd.customerIssues.enhancements.completed} done · {bd.customerIssues.enhancements.inProgress} in progress
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Growth Strategy */}
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <p className="text-[11px] font-black text-blue-200 uppercase tracking-wider">Growth Strategy</p>
+                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-black border border-emerald-400/20">Target: 1M+ Downloads</span>
+                        </div>
+                        <div className="space-y-1.5">
+                          {bd.growthStrategy.map((r: string, i: number) => (
+                            <div key={i} className="flex items-start gap-2 text-[11px] text-blue-100 font-medium">
+                              <TrendingUp className="w-3.5 h-3.5 shrink-0 mt-0.5 text-emerald-400" />
+                              {r}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            /* ── Standard cards for all others ── */
+            return (
+              <div
+                key={ach.id}
+                className={`p-6 sm:p-7 rounded-3xl bg-white border-2 border-slate-200/90 shadow-sm hover:shadow-xl transition-all space-y-4 relative overflow-hidden flex flex-col justify-between ${
+                  ach.id === 'ach-ipcom'
+                    ? 'border-indigo-300 bg-gradient-to-br from-white via-indigo-50/20 to-blue-50/30'
+                    : ach.id === 'ach-social'
+                    ? 'border-purple-300 bg-gradient-to-br from-white via-purple-50/20 to-pink-50/30'
+                    : ach.id.startsWith('ach-conf')
+                    ? 'border-teal-200 bg-gradient-to-br from-white via-teal-50/20 to-emerald-50/20 hover:border-teal-400'
+                    : 'hover:border-blue-400'
+                }`}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
+                    <span className={`px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border ${
+                      ach.id === 'ach-ipcom'
+                        ? 'bg-indigo-100 text-indigo-800 border-indigo-200'
+                        : ach.id === 'ach-social'
+                        ? 'bg-purple-100 text-purple-800 border-purple-200'
+                        : ach.id.startsWith('ach-conf')
+                        ? 'bg-teal-100 text-teal-800 border-teal-200'
+                        : 'bg-blue-100 text-[#0f62fe] border-blue-200'
+                    }`}>
+                      {ach.category}
+                    </span>
+                    <span className="text-xs sm:text-sm font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 shadow-2xs">
+                      {ach.metric}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight flex items-start gap-2.5">
+                    {ach.id === 'ach-ipcom' && <Award className="w-6 h-6 text-indigo-600 shrink-0 mt-0.5" />}
+                    {ach.id === 'ach-social' && <Share2 className="w-6 h-6 text-purple-600 shrink-0 mt-0.5" />}
+                    <span>{ach.title}</span>
+                  </h3>
+
+                  <ul className="space-y-3 pt-1">
+                    {ach.details.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
+                        <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${
+                          ach.id === 'ach-ipcom'
+                            ? 'text-indigo-600'
+                            : ach.id === 'ach-social'
+                            ? 'text-purple-600'
+                            : ach.id.startsWith('ach-conf')
+                            ? 'text-teal-600'
+                            : 'text-[#0f62fe]'
+                        }`} />
+                        <span>{renderDetailText(item)}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight flex items-start gap-2.5">
-                  {ach.id === 'ach-ipcom' && <Award className="w-6 h-6 text-indigo-600 shrink-0 mt-0.5" />}
-                  {ach.id === 'ach-social' && <Share2 className="w-6 h-6 text-purple-600 shrink-0 mt-0.5" />}
-                  <span>{ach.title}</span>
-                </h3>
+                {/* Quick Link Action Buttons */}
+                {ach.id === 'ach-ipcom' && (
+                  <div className="pt-3 border-t border-indigo-100 flex flex-wrap gap-2">
+                    <a
+                      href="https://priorart.ip.com/IPCOM/00278081D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs shadow-md transition-all border border-indigo-500/30"
+                    >
+                      <FileText className="w-4 h-4" />
+                      <span>Read Full IP.com Publication</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
 
-                <ul className="space-y-3 pt-1">
-                  {ach.details.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
-                      <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${
-                        ach.id === 'ach-ipcom' 
-                          ? 'text-indigo-600' 
-                          : ach.id === 'ach-social' 
-                          ? 'text-purple-600' 
-                          : 'text-[#0f62fe]'
-                      }`} />
-                      <span>{renderDetailText(item)}</span>
-                    </li>
-                  ))}
-                </ul>
+                {ach.id === 'ach-social' && (
+                  <div className="pt-3 border-t border-purple-100 flex flex-wrap gap-2">
+                    <a
+                      href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7484842033162108928/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white font-black text-xs transition-all shadow-xs"
+                    >
+                      <span>LinkedIn Post</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/p/DbAP2xUDLHk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90 text-white font-black text-xs transition-all shadow-xs"
+                    >
+                      <span>Instagram Post</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
               </div>
-
-              {/* Quick Link Action Buttons */}
-              {ach.id === 'ach-ipcom' && (
-                <div className="pt-3 border-t border-indigo-100 flex flex-wrap gap-2">
-                  <a
-                    href="https://priorart.ip.com/IPCOM/00278081D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs shadow-md transition-all border border-indigo-500/30"
-                  >
-                    <FileText className="w-4 h-4" />
-                    <span>Read Full IP.com Publication</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              )}
-
-              {ach.id === 'ach-social' && (
-                <div className="pt-3 border-t border-purple-100 flex flex-wrap gap-2">
-                  <a
-                    href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7484842033162108928/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white font-black text-xs transition-all shadow-xs"
-                  >
-                    <span>LinkedIn Post</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/p/DbAP2xUDLHk/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90 text-white font-black text-xs transition-all shadow-xs"
-                  >
-                    <span>Instagram Post</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Sovereign Core Section — embedded directly in Achievements */}

@@ -101,19 +101,20 @@ export const TeamStructureOrgChart: React.FC = () => {
         </div>
       </div>
 
-      {/* Leadership Tier (Daya Nand & Umakanta Senapati) */}
+      {/* Leadership Tier */}
       <div className="text-center space-y-3">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-[#0f62fe] border border-blue-200 text-xs font-black uppercase tracking-widest shadow-2xs">
           <ShieldCheck className="w-4 h-4 text-[#0f62fe]" />
           <span>Leadership & Strategy Steering</span>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-3xl mx-auto">
-          {LEADERSHIP_NODES.map((leader, idx) => (
+        {/* Senior leadership row — Manager & Lead Architect */}
+        <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto">
+          {LEADERSHIP_NODES.slice(0, 2).map((leader, idx) => (
             <div
               key={idx}
               onClick={() => handleMemberClick(leader.name, leader.role, leader.title)}
-              className="w-full sm:w-1/2 p-4 sm:p-5 rounded-3xl bg-white border-2 border-blue-100 shadow-md hover:shadow-xl hover:border-[#0f62fe] cursor-pointer transition-all text-center relative overflow-hidden group"
+              className="flex-1 p-4 sm:p-5 rounded-3xl bg-white border-2 border-blue-100 shadow-md hover:shadow-xl hover:border-[#0f62fe] cursor-pointer transition-all text-center relative overflow-hidden group"
             >
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#0f62fe]" />
               <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-2.5 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center font-black text-2xl shadow-md group-hover:scale-105 transition-transform overflow-hidden border-2 border-blue-100">
@@ -123,19 +124,57 @@ export const TeamStructureOrgChart: React.FC = () => {
                   leader.name.charAt(0)
                 )}
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#0f62fe] transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap">
+              <h3 className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#0f62fe] transition-colors flex items-center justify-center gap-1.5">
                 <span>{leader.name}</span>
-                <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#0f62fe]" />
+                <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-[#0f62fe] shrink-0" />
               </h3>
-              <span className="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-[#0f62fe] text-xs font-black my-1 border border-blue-200 whitespace-nowrap">
+              <span className="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-[#0f62fe] text-xs font-black my-1 border border-blue-200">
                 {leader.title}
               </span>
-              <p className="text-xs text-slate-600 font-medium whitespace-nowrap overflow-hidden text-ellipsis">
+              <p className="text-xs text-slate-600 font-medium">
                 {leader.role}
               </p>
             </div>
           ))}
         </div>
+
+        {/* Junior Architect — Anant Vikram Singh (smaller card, centred below) */}
+        {(() => {
+          const anant = LEADERSHIP_NODES[2];
+          return (
+            <div className="flex justify-center">
+              <div
+                onClick={() => handleMemberClick(anant.name, anant.role, anant.title)}
+                className="w-full sm:w-72 p-3 sm:p-4 rounded-2xl bg-white border-2 border-indigo-100 shadow-sm hover:shadow-lg hover:border-indigo-400 cursor-pointer transition-all text-center relative overflow-hidden group"
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-400 to-blue-500" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-2 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 text-white flex items-center justify-center font-black text-lg shadow group-hover:scale-105 transition-transform overflow-hidden border-2 border-indigo-100">
+                  {memberProfiles[anant.name]?.avatarUrl ? (
+                    <img src={memberProfiles[anant.name].avatarUrl} alt={anant.name} className="w-full h-full object-cover" />
+                  ) : (
+                    anant.name.charAt(0)
+                  )}
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-indigo-600 transition-colors flex items-center justify-center gap-1">
+                  <span>{anant.name}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-500 shrink-0" />
+                </h3>
+                <div className="flex items-center justify-center gap-1.5 flex-wrap my-1">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-[11px] font-black border border-indigo-200">
+                    {anant.title}
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 text-[11px] font-black border border-purple-200">
+                    <Sparkles className="w-2.5 h-2.5" />
+                    Multi-Pod (6 Initiatives)
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 font-medium">
+                  {anant.role}
+                </p>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Down Connection Icon */}
         <div className="flex justify-center my-1 text-[#0f62fe]">
