@@ -436,13 +436,13 @@ export const ACHIEVEMENTS_DATA = [
   {
     id: 'ach-social',
     category: 'IBM Global Media Spotlight',
-    title: 'Dhruv Post is featured on Official Life at IBM Social Media Pages 🌟',
+    title: 'IBM Db2 Lucknow Team Featured on Official Life at IBM Pages 🌟',
     metric: 'LinkedIn & Instagram Spotlight',
     details: [
-      'Dhruv Chaturvedi & Db2 Lucknow team featured on official IBM "Life at IBM" global channels!',
+      'Our IBM Db2 Lucknow team is featured on the official IBM "Life at IBM" global social media channels!',
+      'Dhruv Chaturvedi\'s post brought global recognition to the entire Db2 Lucknow team, highlighting our fresher synergy, engineering speed, and technical innovation.',
       'LinkedIn Official Post: https://www.linkedin.com/feed/update/urn:li:ugcPost:7484842033162108928/',
       'Instagram Official Post: https://www.instagram.com/p/DbAP2xUDLHk/',
-      'Global recognition for fresher synergy, engineering speed, and technical innovation.'
     ]
   },
   {
