@@ -726,6 +726,44 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
           </div>
         </div>
 
+        {/* IBM Connectivity Pack Knowledge Sharing Session Card */}
+        <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 text-white shadow-xl border-2 border-indigo-500/30 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-indigo-700/50 pb-3">
+            <div className="flex items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full bg-indigo-500/20 text-indigo-200 border border-indigo-400/30 text-xs font-black uppercase tracking-widest flex items-center gap-1.5">
+                <Share2 className="w-3.5 h-3.5" />
+                Connectivity Pack
+              </span>
+              <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs font-black flex items-center gap-1.5">
+                <UserCheck className="w-3.5 h-3.5" />
+                Kunal Gola
+              </span>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
+              <Share2 className="w-6 h-6 text-indigo-400 shrink-0" />
+              <span>IBM Connectivity Pack Tool Knowledge Sharing Session</span>
+            </h3>
+            <p className="text-sm sm:text-base text-indigo-100 font-medium leading-relaxed">
+              Dive deep into IBM Connectivity Pack for seamless integration, API discovery, and secure enterprise connectivity. Our team covered best practices, real-world use cases, and tips to accelerate integration development with IBM Connectivity Pack.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="px-3 py-1 rounded-xl bg-indigo-800/60 border border-indigo-600/50 text-indigo-100 text-xs font-bold">
+              📅 Knowledge Sharing
+            </span>
+            <span className="px-3 py-1 rounded-xl bg-indigo-800/60 border border-indigo-600/50 text-indigo-100 text-xs font-bold">
+              👥 Integration Excellence
+            </span>
+            <span className="px-3 py-1 rounded-xl bg-indigo-800/60 border border-indigo-600/50 text-indigo-100 text-xs font-bold">
+              🛡️ Secure & Scalable
+            </span>
+          </div>
+        </div>
+
         <div className="p-7 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-xl space-y-3">
           <div className="flex items-center gap-2.5">
             <TrendingUp className="w-6 h-6 text-amber-300" />
