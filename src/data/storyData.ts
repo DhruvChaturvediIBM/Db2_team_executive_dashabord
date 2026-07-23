@@ -316,6 +316,72 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
 
 export const ACHIEVEMENTS_DATA = [
   {
+    id: 'ach-conf-dhruv',
+    category: 'Customer Conference',
+    title: 'Db2 Technical Advisory Board (TAB) — OSS Live Demo',
+    metric: 'Customer Presentation',
+    presenter: 'Dhruv Chaturvedi',
+    imageUrl: '/IBM DB2 TECH IMAGES/Dhruv_webinar_for_oss.png',
+    details: [
+      'Dhruv Chaturvedi presented IBM Db2\'s open-source initiatives to customers through a live demonstration at the Db2 Technical Advisory Board (TAB) meeting.',
+      'Showcased ongoing work across the OSS ecosystem, including integrations with leading AI frameworks, product capabilities, and engineering efforts to enhance developer experience.',
+      'Walked customers through real-world use cases and live workflows, gathering valuable feedback and strengthening collaboration between the Db2 engineering team and the developer community.'
+    ]
+  },
+  {
+    id: 'ach-conf-anant',
+    category: 'Customer Conference',
+    title: 'Anant Presented IBM Db2 Developer Extension to Customers',
+    metric: 'Customer Presentation',
+    presenter: 'Anant Vikram Singh',
+    imageUrl: '/IBM DB2 TECH IMAGES/Db2_vs_code_Extension_release.jpeg',
+    details: [
+      'Anant Vikram Singh attended a customer meeting and delivered a focused presentation on the IBM Db2 Developer Extension for VS Code.',
+      'Demonstrated key features including Text-to-SQL, Genius Hub integration, connection manager, and schema browser to enterprise customers.',
+      'Highlighted the developer experience improvements and AI-assisted capabilities that make Db2 development faster and more intuitive.'
+    ]
+  },
+  {
+    id: 'ach-conf-ayush',
+    category: 'Customer Conference',
+    title: 'ISA IBM Data & AI User Group Meeting — Db2 Modern Features',
+    metric: 'IBM Technical Exchange',
+    presenter: 'Ayush Rastogi',
+    imageUrl: '/IBM DB2 TECH IMAGES/Db2_vs_code_Extension_release_ayush.jpeg',
+    details: [
+      'Ayush Rastogi presented IBM Db2 Modern Features alongside Deepak at the ISA IBM Data & AI User Group Meeting, sponsored by IBM Technical Exchange.',
+      'Delivered a client-focused session showcasing Apache Iceberg integration, AI capabilities in Db2, Vector Search, and the Db2 Intelligence Center.',
+      'Highlighted how these modern data platform enhancements enable intelligent, scalable, and AI-ready data management for enterprise customers.'
+    ]
+  },
+  {
+    id: 'ach-ga',
+    category: 'Product GA & Release',
+    title: 'IBM Db2 Developer Extension — GA Released on VS Code Marketplace 🚀',
+    metric: 'GA Product Released',
+    details: [
+      'Successfully shipped IBM Db2 Developer Extension to General Availability with 2 security patch releases.',
+      'Extension is live on the VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=IBM.db2-for-luw',
+      '95%+ code coverage · Zero security vulnerabilities · One-click local install for Db2 Community Edition.',
+      'Growth target: Scale to 1M+ developers via blogs, demos & AI-powered Text-to-SQL + Genius Hub.',
+      'Developer Productivity: Faster onboarding with IBM BOB — context-aware codebase understanding for quicker ramp-up & development.',
+    ],
+    backDetails: {
+      customerIssues: {
+        total: 12,
+        bugs: { total: 5, fixed: 4, inProgress: 1 },
+        enhancements: { total: 4, completed: 2, inProgress: 2 },
+      },
+      growthStrategy: [
+        'Expand community adoption through blogs, demos, webinars, tutorials & developer advocacy.',
+        'Build a rich connector ecosystem with Langflow, n8n, CrewAI & LangChain.',
+        'Enhance AI-powered developer experience with Text-to-SQL & Genius Hub integration.',
+        'Leverage telemetry-driven insights to optimize onboarding, retention & adoption.',
+        'Organize developer hackathons using IBM Db2 + Developer Extension for hands-on adoption.',
+      ],
+    },
+  },
+  {
     id: 'ach-ipcom',
     category: 'Prior Art (IP.com) Publication',
     title: '1st Official Technical Publication from IBM Db2 Lucknow ⭐',
@@ -373,58 +439,14 @@ export const ACHIEVEMENTS_DATA = [
     ]
   },
   {
-    id: 'ach-ga',
-    category: 'Product GA & Release',
-    title: 'IBM Db2 Developer Extension — GA Released on VS Code Marketplace 🚀',
-    metric: 'GA Product Released',
+    id: 'ach-sovereign',
+    category: 'Sovereign Core Selection',
+    title: 'Two Projects Selected for IBM Sovereign Core Program 🛡️',
+    metric: 'Sovereign Core Selected',
     details: [
-      '95%+ code coverage · Zero security vulnerabilities · One-click local install for Db2 Community Edition.',
-      'Growth target: Scale to 1M+ developers via blogs, demos & AI-powered Text-to-SQL + Genius Hub.',
-      'Developer Productivity: Faster onboarding with IBM BOB — context-aware codebase understanding for quicker ramp-up & development.',
-    ],
-    backDetails: {
-      customerIssues: {
-        total: 12,
-        bugs: { total: 5, fixed: 4, inProgress: 1 },
-        enhancements: { total: 4, completed: 2, inProgress: 2 },
-      },
-      growthStrategy: [
-        'Expand community adoption through blogs, demos, webinars, tutorials & developer advocacy.',
-        'Build a rich connector ecosystem with Langflow, n8n, CrewAI & LangChain.',
-        'Enhance AI-powered developer experience with Text-to-SQL & Genius Hub integration.',
-        'Leverage telemetry-driven insights to optimize onboarding, retention & adoption.',
-        'Organize developer hackathons using IBM Db2 + Developer Extension for hands-on adoption.',
-      ],
-    },
-  },
-  {
-    id: 'ach-conf-1',
-    category: 'Conference & Thought Leadership',
-    title: 'IBM Db2 Modern Features Presented at ISA IBM Data & AI User Group Meeting',
-    metric: 'IBM Technical Exchange',
-    details: [
-      'Presented alongside Deepak at the ISA IBM Data & AI User Group Meeting, sponsored by IBM Technical Exchange.',
-      'Showcased Apache Iceberg integration, AI capabilities in Db2, and Vector Search to a client audience.',
-      'Demonstrated the Db2 Intelligence Center and modern data platform enhancements.',
-      'Highlighted how Db2 features enable intelligent, scalable, and AI-ready data management.',
-    ]
-  },
-  {
-    id: 'ach-conf-2',
-    category: 'Conference & Thought Leadership',
-    title: 'Conference Talk 2 — Details Coming Soon',
-    metric: 'Coming Soon',
-    details: [
-      'Details for this conference presentation will be added shortly.',
-    ]
-  },
-  {
-    id: 'ach-conf-3',
-    category: 'Conference & Thought Leadership',
-    title: 'Conference Talk 3 — Details Coming Soon',
-    metric: 'Coming Soon',
-    details: [
-      'Details for this conference presentation will be added shortly.',
+      'Sovereign AI Vectorless Document Intelligence: Selected for Sovereign Core — high-security vectorless document extraction and intelligence engine.',
+      'Db2 Sovereign Vector RAG Service: Selected for Sovereign Core — air-gapped enterprise RAG service powered by Db2 vector search.',
+      'Sovereign Core selection represents IBM\'s highest trust-tier for national and enterprise AI infrastructure projects.'
     ]
   },
   {
