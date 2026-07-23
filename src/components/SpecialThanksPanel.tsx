@@ -159,7 +159,7 @@ export const SpecialThanksPanel: React.FC = () => {
       >
         <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-slate-200/80 bg-black aspect-video">
           <iframe
-            src="https://www.youtube.com/embed/TopQNPhvlsY?autoplay=1&rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/TopQNPhvlsY?autoplay=1&loop=1&playlist=TopQNPhvlsY&rel=0&modestbranding=1"
             title="IBM Db2 Lucknow Team Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
