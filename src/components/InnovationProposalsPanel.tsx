@@ -44,31 +44,31 @@ export const InnovationProposalsPanel: React.FC = () => {
       visionBadge: 'Revenue & Market Productization',
       shortDesc: 'Closing the AI agent-memory gap against Oracle, AWS, and Google — converting Db2\'s existing vector and in-database AI capability into a packaged, revenue-generating SDK.',
       metrics: [
-        { 
-          label: 'Global AI Agents Market', 
-          value: '$52.6B', 
-          subtext: 'Projected AI agents market by 2030 (46.3% CAGR)',
+        {
+          label: 'Global AI Agents Market',
+          value: 'Growing Fast',
+          subtext: 'Projected multi-billion dollar AI agents market by 2030 (46.3% CAGR)',
           sourceName: 'MarketsandMarkets Report',
           sourceUrl: 'https://www.marketsandmarkets.com'
         },
-        { 
-          label: 'Oracle AI Database YoY', 
-          value: '404%', 
+        {
+          label: 'Oracle AI Database YoY',
+          value: 'Triple-Digit',
           subtext: 'YoY growth of Oracle\'s AI-native database line in Q4 FY26',
           sourceName: 'Oracle Q4 FY26 Results',
           sourceUrl: 'https://www.oracle.com/news/'
         },
-        { 
-          label: 'Competitors Monetizing', 
-          value: '3 Major', 
+        {
+          label: 'Competitors Monetizing',
+          value: 'Oracle · AWS · Google',
           subtext: 'Oracle (AI Agent Memory), AWS (Bedrock Memory), Google (Vertex Memory)',
           sourceName: 'Competitor Announcements',
           sourceUrl: 'https://blogs.oracle.com/developers'
         },
-        { 
-          label: 'Db2 Status Today', 
-          value: '0 Packaged', 
-          subtext: '0 packaged agent-memory SDKs shipped despite native vector engine',
+        {
+          label: 'Db2 Status Today',
+          value: 'Gap to Close',
+          subtext: 'No packaged agent-memory SDK shipped yet despite native vector engine',
           sourceName: 'IBM Product Announcements',
           sourceUrl: 'https://www.ibm.com/new/announcements'
         }

@@ -245,8 +245,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               );
             }
 
-            /* ── FLIP CARD for ach-vector ── */
-            if (ach.id === 'ach-vector') {
+            /* ── FLIP CARD for ach-vector-linux and ach-vector-aix ── */
+            if (ach.id === 'ach-vector-linux' || ach.id === 'ach-vector-aix') {
               const bd = (ach as any).backDetails;
               return (
                 <div key={ach.id} className="perspective-1000">
@@ -458,33 +458,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
           })}
         </div>
 
-        {/* Sovereign Core Section — embedded directly in Achievements */}
+        {/* Sovereign Core Section — WatsonX Challenge only (individual projects shown in ach-sovereign card above) */}
         <div className="space-y-4 pt-2">
-          <div className="flex items-center gap-2.5 pb-3 border-b border-slate-200/80">
-            <Cpu className="w-5 h-5 text-purple-600" />
-            <h3 className="text-lg font-black text-slate-900 tracking-tight">Sovereign Core & AI Innovations</h3>
-            <span className="ml-auto px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-black border border-purple-200">
-              Sovereign Core Selected
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {SOVEREIGN_INNOVATIONS.sovereignProjects.map((proj, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-3xl bg-gradient-to-br from-white via-purple-50/20 to-blue-50/30 border-2 border-purple-200 shadow-md hover:shadow-xl hover:border-purple-400 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="px-3.5 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-black border border-purple-200">
-                    {proj.badge}
-                  </span>
-                  <Cpu className="w-5 h-5 text-purple-600" />
-                </div>
-                <h3 className="text-lg font-extrabold text-slate-900">{proj.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">{proj.desc}</p>
-              </div>
-            ))}
-          </div>
-
           {/* WatsonX Challenge */}
           <div className="p-6 rounded-3xl bg-white border-2 border-slate-200/90 shadow-md flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex items-center gap-4">

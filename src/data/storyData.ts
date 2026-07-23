@@ -67,7 +67,7 @@ export const PROJECT_TEAMS: ProjectTeam[] = [
     title: 'DB2 AI Ecosystem Enablement',
     leaders: ['Priyanshu Krishnan'],
     description: 'Community collaborations & framework drivers for generative AI workflows.',
-    members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Pawan Thakur', 'Geetika Chugh'],
+    members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Geetika Chugh', 'Pawan Thakur'],
     subProjects: [
       {
         name: 'Langflow Integration',
@@ -382,22 +382,41 @@ export const ACHIEVEMENTS_DATA = [
     },
   },
   {
-    id: 'ach-vector',
+    id: 'ach-vector-linux',
     category: 'Vector Index Team Achievement',
-    title: 'Vector Index — DiskANN on Linux AMD64 & IBM AIX (POWER) 🧠',
-    metric: 'Cross-Platform Delivery',
+    title: 'DiskANN Support on Linux (AMD64) 🐧',
+    metric: 'Open-Source Delivery',
     details: [
-      'DiskANN Support on Linux (AMD64): Integrated OpenBLAS as the linear algebra backend, replacing Intel MKL — reducing proprietary library dependency and improving portability.',
-      'Simplified deployment across Linux AMD64 environments and established a foundation for broader platform support.',
-      'Vector Index on IBM AIX (POWER): Successfully delivered DiskANN support on IBM AIX — enabling AI-powered vector search on IBM Power Systems.',
-      'Addressed compiler compatibility and optimized library integration for enterprise POWER customers running RAG and AI workloads.',
+      'Successfully integrated OpenBLAS as the linear algebra backend, replacing the dependency on Intel MKL.',
+      'Reduced reliance on proprietary libraries and aligned the solution with open-source technologies.',
+      'Improved portability and simplified deployment across Linux AMD64 environments.',
+      'Established a foundation for broader platform support and future optimizations.',
     ],
     backDetails: {
       businessImpact: [
-        '🚀 Expanded Vector Index availability across both Linux AMD64 and IBM AIX (POWER).',
+        '🚀 Expanded Vector Index availability across Linux AMD64 environments.',
         '🌐 Increased adoption of open-source technologies by transitioning from Intel MKL to OpenBLAS.',
         '🤖 Strengthened Db2\'s readiness for modern AI, semantic search, and vector database workloads.',
+        '📈 Positioned the Vector Index team to accelerate future performance improvements and platform expansion.',
+      ],
+    },
+  },
+  {
+    id: 'ach-vector-aix',
+    category: 'Vector Index Team Achievement',
+    title: 'Vector Index Support on IBM AIX (POWER) ⚡',
+    metric: 'Enterprise POWER Delivery',
+    details: [
+      'Successfully delivered Vector Index (DiskANN) support on the IBM AIX platform.',
+      'Enabled AI-powered vector search capabilities on IBM Power Systems, extending Db2\'s AI portfolio to enterprise POWER customers.',
+      'Addressed platform-specific engineering challenges, including compiler compatibility, portability, and optimized library integration.',
+      'Expanded Db2\'s cross-platform capabilities while strengthening support for enterprise AI and RAG workloads.',
+    ],
+    backDetails: {
+      businessImpact: [
+        '🚀 Expanded Vector Index availability to IBM AIX (POWER) — a critical enterprise platform.',
         '💼 Enhanced value for enterprise customers running mission-critical workloads on IBM Power Systems.',
+        '🤖 Strengthened Db2\'s readiness for AI, semantic search, and vector database workloads on POWER.',
         '📈 Positioned the Vector Index team to accelerate future performance improvements and platform expansion.',
       ],
     },
@@ -446,7 +465,8 @@ export const ACHIEVEMENTS_DATA = [
     details: [
       'Official Db2 connector merged directly into Haystack core framework repository.',
       'Enables enterprise developers globally to build RAG applications on Db2.',
-      'Gained significant downloads post-merge; official IBM release is still pending.',
+      'Already gaining downloads from the community post-merge.',
+      'Technical blogs have been drafted and are ready for release — broader adoption drive incoming.',
     ]
   },
   {
