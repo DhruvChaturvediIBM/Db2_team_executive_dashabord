@@ -125,7 +125,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
 
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-200/80 pb-4">
           <div>
             <div className="flex items-center gap-2.5">
               <Trophy className="w-6 h-6 text-[#0f62fe]" />
@@ -135,8 +135,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               Defensive Publications, Global Spotlights, GA product releases & ecosystem milestones
             </p>
           </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0f62fe] text-xs sm:text-sm font-black border border-blue-200">
-            2025 and early 2026 Team Milestone
+          <span className="self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0f62fe] text-xs font-black border border-blue-200 whitespace-nowrap">
+            2025 & early 2026 Milestone
           </span>
         </div>
 
@@ -148,13 +148,13 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
             if (ach.id === 'ach-ga') {
               const bd = (ach as any).backDetails;
               return (
-                <div key={ach.id} className="perspective-1000" style={{ minHeight: '400px' }}>
+                <div key={ach.id} className="perspective-1000">
                   <div
-                    className="relative w-full h-full transition-transform duration-700 preserve-3d"
-                    style={{ transform: gaFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '400px' }}
+                    className="relative w-full transition-transform duration-700 preserve-3d"
+                    style={{ transform: gaFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
                   >
                     {/* FRONT */}
-                    <div className="absolute inset-0 backface-hidden rounded-3xl bg-white border-2 border-blue-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
+                    <div className="backface-hidden rounded-3xl bg-white border-2 border-blue-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
                           <span className="px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border bg-blue-100 text-[#0f62fe] border-blue-200">
@@ -215,11 +215,11 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                           Customer Issues — {bd.customerIssues.total} Total
                         </p>
                         <div className="flex flex-wrap gap-2 text-[11px] font-semibold">
-                          <span className="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-200 border border-red-400/20">
-                            🐛 {bd.customerIssues.bugs.total} Bugs · {bd.customerIssues.bugs.fixed} fixed · {bd.customerIssues.bugs.inProgress} in progress
+                          <span className="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-200 border border-red-400/20 whitespace-nowrap">
+                            {bd.customerIssues.bugs.total} Bugs · {bd.customerIssues.bugs.fixed} fixed · {bd.customerIssues.bugs.inProgress} in progress
                           </span>
-                          <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 border border-emerald-400/20">
-                            ✨ {bd.customerIssues.enhancements.total} Enhancements · {bd.customerIssues.enhancements.completed} done · {bd.customerIssues.enhancements.inProgress} in progress
+                          <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 border border-emerald-400/20 whitespace-nowrap">
+                            {bd.customerIssues.enhancements.total} Enhancements · {bd.customerIssues.enhancements.completed} done · {bd.customerIssues.enhancements.inProgress} in progress
                           </span>
                         </div>
                       </div>
@@ -249,13 +249,13 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
             if (ach.id === 'ach-vector') {
               const bd = (ach as any).backDetails;
               return (
-                <div key={ach.id} className="perspective-1000" style={{ minHeight: '400px' }}>
+                <div key={ach.id} className="perspective-1000">
                   <div
-                    className="relative w-full h-full transition-transform duration-700 preserve-3d"
-                    style={{ transform: vectorFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '400px' }}
+                    className="relative w-full transition-transform duration-700 preserve-3d"
+                    style={{ transform: vectorFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
                   >
                     {/* FRONT */}
-                    <div className="absolute inset-0 backface-hidden rounded-3xl bg-white border-2 border-emerald-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
+                    <div className="backface-hidden rounded-3xl bg-white border-2 border-emerald-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
                       <div className="space-y-4">
                         <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
                           <span className="px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border bg-emerald-100 text-emerald-800 border-emerald-200">
@@ -522,7 +522,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
   if (type === 'in-progress') {
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-200/80 pb-4">
           <div>
             <div className="flex items-center gap-2.5">
               <Clock className="w-6 h-6 text-[#0f62fe]" />
@@ -532,7 +532,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               Current active builds, platform ports, and framework integrations
             </p>
           </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-black border border-amber-200">
+          <span className="self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-black border border-amber-200 whitespace-nowrap">
             Active Build Phase
           </span>
         </div>
@@ -567,7 +567,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
   if (type === 'collaborations') {
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-200/80 pb-4">
           <div>
             <div className="flex items-center gap-2.5">
               <Globe2 className="w-6 h-6 text-[#0f62fe]" />
@@ -577,12 +577,12 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               Active engineering synergy across global Db2, release, security, and open-source teams
             </p>
           </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0f62fe] text-xs sm:text-sm font-black border border-blue-200">
+          <span className="self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0f62fe] text-xs font-black border border-blue-200 whitespace-nowrap">
             Global Network
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {GLOBAL_COLLABORATIONS.map((collab, idx) => (
             <div
               key={idx}
@@ -614,7 +614,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
   if (type === 'challenges') {
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-200/80 pb-4">
           <div>
             <div className="flex items-center gap-2.5">
               <AlertTriangle className="w-6 h-6 text-amber-500" />
@@ -624,7 +624,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               Constructive suggestions for PDLC alignment, review bottlenecks, and stakeholder engagement
             </p>
           </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-black border border-amber-200">
+          <span className="self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-black border border-amber-200 whitespace-nowrap">
             Continuous Improvement
           </span>
         </div>
@@ -636,11 +636,11 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               className="p-6 rounded-3xl bg-white border-2 border-amber-200 shadow-md space-y-3 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 bottom-0 w-2 bg-amber-500" />
-              <div className="flex items-center justify-between">
-                <span className="px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-black uppercase tracking-wider">
+              <div className="flex items-start justify-between gap-2">
+                <span className="px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-black uppercase tracking-wider leading-snug">
                   {ch.area}
                 </span>
-                <AlertTriangle className="w-5 h-5 text-amber-500" />
+                <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
               </div>
               {ch.issue && (
                 <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium pt-1">
@@ -668,7 +668,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
   if (type === 'ai-adoption') {
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
-        <div className="flex items-center justify-between border-b-2 border-slate-200/80 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2 border-slate-200/80 pb-4">
           <div>
             <div className="flex items-center gap-2.5">
               <Bot className="w-6 h-6 text-[#0f62fe]" />
@@ -678,12 +678,12 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               Empowering development velocity, tech exchange, and market outreach through AI
             </p>
           </div>
-          <span className="px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs sm:text-sm font-black border border-emerald-200">
+          <span className="self-start sm:self-center shrink-0 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black border border-emerald-200 whitespace-nowrap">
             100% AI Native Target 2026
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {AI_ADOPTION_METRICS.map((item, idx) => (
             <div
               key={idx}

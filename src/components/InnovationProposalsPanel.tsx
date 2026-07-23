@@ -154,12 +154,12 @@ export const InnovationProposalsPanel: React.FC = () => {
 
       {/* Innovation Proposals Grid */}
       <div className="space-y-6">
-        <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200">
           <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
             <Zap className="w-5 h-5 text-amber-500" />
             <span>Active Innovation Proposals</span>
           </h3>
-          <span className="text-xs font-extrabold text-[#0f62fe] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+          <span className="self-start sm:self-center text-xs font-extrabold text-[#0f62fe] bg-blue-50 px-3 py-1 rounded-full border border-blue-100 whitespace-nowrap">
             {proposals.length} Executive Proposals
           </span>
         </div>
@@ -244,7 +244,7 @@ export const InnovationProposalsPanel: React.FC = () => {
       {/* Modal View for Detailed Proposal Breakdown */}
       {selectedProposal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-slate-200 my-8 max-h-[90vh] overflow-y-auto relative">
+          <div className="bg-white rounded-3xl max-w-3xl w-full p-4 sm:p-8 space-y-6 shadow-2xl border border-slate-200 my-4 sm:my-8 max-h-[92vh] overflow-y-auto relative">
             
             {/* Modal Header */}
             <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">

@@ -77,7 +77,7 @@ export const TeamStructureOrgChart: React.FC = () => {
     <div className="space-y-6 animate-in fade-in duration-300">
       
       {/* Top Banner: Key Leadership Highlight with Large Quote */}
-      <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-5 relative overflow-hidden">
+      <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
         <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none" />
         <div className="flex items-start gap-4 z-10">
           <div className="p-3 rounded-2xl bg-white/15 backdrop-blur-md text-amber-300 shrink-0 shadow-md border border-white/20">
@@ -192,8 +192,8 @@ export const TeamStructureOrgChart: React.FC = () => {
               className="p-4 sm:p-5 rounded-3xl bg-white border-2 border-slate-200/90 shadow-sm hover:shadow-md transition-all space-y-3.5 relative"
             >
               {/* TOP HEADER: Project Name at TOP of container */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-100 pb-3">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 border-b border-slate-100 pb-3">
+                <div className="flex items-center gap-3 min-w-0 flex-1">
                   <div className="p-2.5 rounded-2xl bg-blue-50 border border-blue-200 shrink-0">
                     {getProjectIcon(project.id)}
                   </div>
@@ -207,9 +207,9 @@ export const TeamStructureOrgChart: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   <span className="px-3 py-1 rounded-full bg-blue-100 text-[#0f62fe] border border-blue-200 text-xs font-black whitespace-nowrap">
-                    Team Members ({allMembers.length})
+                    {allMembers.length} Members
                   </span>
                 </div>
               </div>
