@@ -996,6 +996,28 @@ export const DEFAULT_MEMORIES: MemoryPhoto[] = [
     tags: ['Team Photo', 'IBM Db2', 'Lucknow', 'United'],
     location: 'IBM Lucknow',
     highlight: true,
+  },
+  {
+    id: 'mem-cycle-donation',
+    title: 'Cycle Donation CSR Activity 🚲',
+    caption: 'IBM Db2 Lucknow team members participating in a cycle donation charity drive — giving back to the community, one ride at a time.',
+    category: 'celebrations',
+    date: '2025',
+    imageUrl: '/IBM DB2 TECH IMAGES/cyclye_donation_activity.png',
+    tags: ['CSR', 'Cycle Donation', 'Community', 'IBM'],
+    location: 'IBM Lucknow Office',
+    highlight: true,
+  },
+  {
+    id: 'mem-sovereign-team',
+    title: 'Sovereign Core — Team in Ethnic Wear 🛡️',
+    caption: 'The Db2 Lucknow team dressed up in vibrant traditional attire for the IBM Sovereign Core event — bringing culture and pride together with cutting-edge AI innovation.',
+    category: 'tech',
+    date: '2025',
+    imageUrl: '/IBM DB2 TECH IMAGES/sovereign_1st_.png',
+    tags: ['Sovereign Core', 'IBM', 'Team', 'Ethnic Wear'],
+    location: 'IBM Sovereign Event',
+    highlight: true,
   }
 ];
 
