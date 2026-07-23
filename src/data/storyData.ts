@@ -617,7 +617,7 @@ export const AI_ADOPTION_METRICS = [
   },
   {
     metric: 'IBM BOB Tool',
-    label: 'Tech Exchange (Led by Dhruv)',
+    label: 'Tech Exchange (Led by Dhruv & Kunal)',
     desc: 'Led IBM BOB knowledge sharing session with the Kochi & Lucknow teams, presenting AI productivity tools.'
   },
   {
