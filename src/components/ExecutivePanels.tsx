@@ -528,9 +528,20 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                 {item.title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                {item.desc}
-              </p>
+              {(item as any).points ? (
+                <ul className="space-y-2 pt-1">
+                  {(item as any).points.map((pt: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-[#0f62fe]" />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  {(item as any).desc}
+                </p>
+              )}
             </div>
           ))}
         </div>

@@ -52,14 +52,14 @@ export const ProductivityOutreachPanel: React.FC = () => {
             </div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs shadow-md">
               <Award className="w-4 h-4" />
-              <span>Initiative Lead: Dhruv Chaturvedi</span>
+              <span>Led by Dhruv Chaturvedi & Kunal Gola</span>
             </div>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
             Team Productivity, Media & Global Visibility
           </h2>
           <p className="text-sm sm:text-base text-blue-100 max-w-4xl leading-relaxed">
-            <strong className="text-white font-extrabold">Dhruv Chaturvedi</strong> is leading this productivity initiative — creating rich graphics, videos, blogs, and media assets, and actively sharing these capabilities and materials across all team members for maximum global impact.
+            Our Db2 Lucknow team is leading this productivity initiative — creating rich graphics, videos, blogs, and media assets, and actively sharing these capabilities across all team members for maximum global impact. This initiative is driven by <strong className="text-white font-extrabold">Dhruv Chaturvedi</strong> and <strong className="text-white font-extrabold">Kunal Gola</strong>, ensuring we build a strong engineering brand and community presence.
           </p>
         </div>
       </div>

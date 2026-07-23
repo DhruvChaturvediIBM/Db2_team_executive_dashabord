@@ -327,7 +327,7 @@ export const TeamStructureOrgChart: React.FC = () => {
               Executive Review Platform
             </span>
             <h3 className="text-base sm:text-lg font-black text-white whitespace-nowrap">
-              Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi
+              Made with ❤️ by Dhruv Chaturvedi & Pawan Thakur
             </h3>
           </div>
         </div>

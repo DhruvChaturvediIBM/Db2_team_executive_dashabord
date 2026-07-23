@@ -506,28 +506,95 @@ export const IN_PROGRESS_DATA = [
   {
     title: 'Db2 Support on ARM64 Linux',
     status: 'Build in Progress',
-    desc: 'The team is actively compiling and validating native Db2 binary execution for ARM64 Linux environments. The ARM64 pre-build phase has been completed successfully. The current focus is on resolving native build blockers and ensuring full test suite compatibility on 64-bit ARM servers. This opens Db2 to a new generation of cloud-native and edge infrastructure deployments.',
+    points: [
+      'ARM64 pre-build phase has been completed successfully.',
+      'Currently resolving native build blockers and ensuring full test suite compatibility on 64-bit ARM servers.',
+      'Opens Db2 to a new generation of cloud-native and edge infrastructure deployments.',
+    ],
   },
   {
     title: 'PowerPC (PPC) Porting & Validation',
     status: 'In Progress',
-    desc: 'Cross-compilation pipeline for IBM PowerPC architecture is actively being established. The team is working through platform-specific toolchain configuration, dependency resolution, and runtime library compatibility for Db2 on POWER systems. Successful completion will extend Db2 reach to IBM POWER infrastructure customers.',
+    points: [
+      'Cross-compilation pipeline for IBM PowerPC architecture is actively being established.',
+      'Working through platform-specific toolchain configuration, dependency resolution, and runtime library compatibility.',
+      'Successful completion will extend Db2 reach to IBM POWER infrastructure customers.',
+    ],
   },
   {
     title: 'VS Code Extension Text-to-SQL & Feature Enhancements',
     status: 'In Progress',
-    desc: 'Ongoing development of the IBM Db2 Developer Extension includes deeper Genius Hub Text-to-SQL integration, schema-aware query suggestions, and improved connection manager UX. The extension is already GA and live on the VS Code Marketplace. Active engineering is underway to ship the next feature release with enhanced AI-assisted developer workflows.',
+    points: [
+      'Extension is already GA and live on the VS Code Marketplace.',
+      'Deeper Genius Hub Text-to-SQL integration and schema-aware query suggestions in active development.',
+      'Improved connection manager UX and AI-assisted developer workflows being shipped in the next feature release.',
+    ],
   },
   {
     title: 'Db2 Vector Index Support in Langchain',
     status: 'In Progress',
-    desc: 'Engineering work is underway to integrate Db2 Vector Index natively into the Langchain ecosystem. This enables enterprise Langchain users to use Db2 as a first-class vector store for Retrieval-Augmented Generation (RAG) pipelines. The integration covers index creation, similarity search, and hybrid queries directly through Db2\'s native vector engine.',
+    points: [
+      'Currently working on Knowledge Base support and leveraging the langchain-db2 connector.',
+      'Enables enterprise Langchain users to use Db2 as a first-class vector store for RAG pipelines.',
+      'Integration covers index creation, similarity search, and hybrid queries via Db2\'s native vector engine.',
+    ],
   },
   {
-    title: 'AI Framework Connectors — Active Development',
+    title: 'Langflow Connector',
+    status: 'Production — Active Enhancement',
+    points: [
+      'Production released with 30k+ community downloads.',
+      'Currently working on Knowledge Base support and further enhancements.',
+      'Leveraging langchain-db2 connector for extended capabilities.',
+    ],
+  },
+  {
+    title: 'CrewAI Db2 Connector',
+    status: 'Release Pending',
+    points: [
+      'PR approved by the team and going to be released next.',
+      'Enables agentic workflow orchestration with Db2 as the data backbone.',
+      'Positions Db2 for enterprise multi-agent AI pipelines.',
+    ],
+  },
+  {
+    title: 'Haystack Connector',
+    status: 'Release Pending',
+    points: [
+      'Merged into Haystack core repository.',
+      'Official IBM release is the remaining step.',
+      'Technical blogs have been drafted and are ready to publish for broader adoption.',
+    ],
+  },
+  {
+    title: 'Microsoft Agent Framework Connector',
+    status: 'POC Completed',
+    points: [
+      'Proof of Concept completed successfully.',
+      'Demonstrates Db2 integration with Microsoft\'s enterprise AI agent framework.',
+      'Lays foundation for production connector development.',
+    ],
+  },
+  {
+    title: 'N8N Db2 Connector',
+    status: 'POC Completed',
+    points: [
+      'Proof of Concept completed successfully.',
+      'Validates no-code automation workflows with Db2 as the data source.',
+      'Alpine Linux support is required for N8N contribution — currently being scoped.',
+    ],
+  },
+  {
+    title: 'IBM App Connectivity Pack Adoption PoC',
     status: 'In Progress',
-    desc: 'The team is actively building and shipping Db2 connectors for the leading AI orchestration frameworks. Current active development targets: Langflow Connector (production released, 30k+ downloads), Haystack Connector (merged into core repo), CrewAI Connector (agentic workflow orchestration with Db2), N8N Connector (no-code automation integration), and Microsoft Agent Framework Connector (enterprise AI agent integration). These connectors position Db2 as the enterprise-grade data backbone for generative AI applications.',
-  }
+    points: [
+      'Building a Java + Spring Boot and React based PoC to validate and accelerate adoption of IBM Connectivity Pack across enterprise products.',
+      'Focuses on discovering, documenting, and securely integrating leading SaaS apps: Workday, Salesforce, ServiceNow, and SharePoint.',
+      'Current efforts include API discovery and documentation, framework scaffolding, secure configuration, and automated testing readiness.',
+      'Building a reusable integration pattern to demonstrate reliable CRUD operations via Connectivity Pack APIs.',
+      'Will establish a consistent, secure, and scalable integration foundation for IBM products.',
+    ],
+  },
 ];
 
 export const SOVEREIGN_INNOVATIONS = {
@@ -625,6 +692,16 @@ export const CHALLENGES_PROCESS = [
       'UX experts have limited involvement in product development.',
       'Key features like Text-to-SQL were integrated without prior UX input.',
       'Earlier UX engagement would improve usability and reduce rework cycles.',
+    ]
+  },
+  {
+    id: 'ch-5',
+    area: 'Alpine Linux Support for N8N Contribution',
+    issue: '',
+    points: [
+      'Alpine Linux support is a prerequisite for contributing the Db2 connector to N8N.',
+      'N8N\'s infrastructure relies on Alpine-based Docker images which have compatibility constraints.',
+      'Resolving Alpine support will unblock the N8N community contribution and official release.',
     ]
   }
 ];
