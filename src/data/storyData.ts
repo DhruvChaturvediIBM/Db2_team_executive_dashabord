@@ -411,7 +411,7 @@ export const ACHIEVEMENTS_DATA = [
       'Defensive Publication: Self-Healing Transaction Agent for Autonomous Recovery of Database Failures.',
       'Published Link: https://priorart.ip.com/IPCOM/00278081D',
       'Authors: Daya Nand, Dhruv Chaturvedi, Khushi Tyagi, Geetika Chugh',
-      'Autonomous recovery layer using adaptive backoff & isolation level tuning to prevent deadlocks.'
+      'A self-healing transaction agent that autonomously detects, recovers, and optimizes database transaction failures in real time.'
     ]
   },
   {
