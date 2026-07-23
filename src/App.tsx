@@ -5,6 +5,7 @@ import { TeamStructureOrgChart } from './components/TeamStructureOrgChart';
 import { ProductivityOutreachPanel } from './components/ProductivityOutreachPanel';
 import { InnovationProposalsPanel } from './components/InnovationProposalsPanel';
 import { PhotoCarousel3D } from './components/PhotoCarousel3D';
+import { SpecialThanksPanel } from './components/SpecialThanksPanel';
 import { ExecutivePanels } from './components/ExecutivePanels';
 import { CollageSection } from './components/CollageSection';
 import { StickyNotesWall } from './components/StickyNotesWall';
@@ -191,6 +192,11 @@ export default function App() {
           {/* Section 9: Family Wishes Wall */}
           {activeTab === 'wishes-notes' && (
             <StickyNotesWall notes={notes} onAddNote={handleAddNote} />
+          )}
+
+          {/* Section 10: Special Thanks */}
+          {activeTab === 'special-thanks' && (
+            <SpecialThanksPanel />
           )}
 
         </div>

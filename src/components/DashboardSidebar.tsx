@@ -13,7 +13,8 @@ import {
   ChevronLeft,
   Lightbulb,
   Video,
-  X
+  X,
+  Heart
 } from 'lucide-react';
 
 interface DashboardSidebarProps {
@@ -43,6 +44,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
     { id: 'ai-adoption', label: 'AI Productivity', icon: Bot, badge: '8-10x' },
     { id: 'collaborations', label: 'Global Synergy', icon: Globe2 },
     { id: '3d-gallery', label: 'Fun Moments', icon: Camera, badge: `${memoryCount}` },
+    { id: 'special-thanks', label: 'A Big Thanks 🙏', icon: Heart },
   ];
 
   const handleTabChange = (tab: DashboardTab) => {

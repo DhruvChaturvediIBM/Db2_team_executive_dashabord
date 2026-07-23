@@ -59,7 +59,8 @@ export type DashboardTab =
   | 'collaborations'
   | 'challenges'
   | 'ai-adoption'
-  | '3d-gallery';
+  | '3d-gallery'
+  | 'special-thanks';
 
 export interface StoryChapterData {
   id: string;
