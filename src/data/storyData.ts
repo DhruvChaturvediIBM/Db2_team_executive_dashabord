@@ -571,11 +571,11 @@ export const IN_PROGRESS_DATA = [
   },
   {
     title: 'Microsoft Agent Framework Connector',
-    status: 'POC Completed',
+    status: 'In Research',
     points: [
-      'Proof of Concept completed successfully.',
-      'Demonstrates Db2 integration with Microsoft\'s enterprise AI agent framework.',
-      'Lays foundation for production connector development.',
+      'Actively researching Microsoft\'s enterprise AI agent framework and its integration points with Db2.',
+      'Evaluating architecture patterns, authentication flows, and connector requirements.',
+      'Foundation work underway ahead of formal POC and production development.',
     ],
   },
   {
