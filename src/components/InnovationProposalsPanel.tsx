@@ -105,23 +105,29 @@ export const InnovationProposalsPanel: React.FC = () => {
     },
     {
       id: 'page-index-vectorless',
-      title: 'Page Index Evaluation for Db2 Vectorless',
+      title: 'PageIndex — Vectorless Retrieval Architecture for Db2',
       visionBadge: 'AI & Vector Index Architecture',
-      shortDesc: 'Evaluating Page Indexing techniques for Db2 Vectorless database queries & document reasoning, eliminating heavy vector index build overhead.',
+      shortDesc: 'Evaluate PageIndex as a next-generation retrieval architecture for Db2 that replaces vector search with reasoning over hierarchical document indexes — no embeddings, no vector database, no chunking.',
       metrics: [
-        { label: 'Indexing Overhead', value: '0 Vector DB', subtext: 'No second vector database needed to license or maintain' },
-        { label: 'Retrieval Latency', value: '<10ms Query', subtext: 'Direct page-level relational index lookup over structured tables' },
-        { label: 'Memory Footprint', value: '100% Vectorless', subtext: 'Zero embedding storage & zero re-vectorization overhead on document updates' }
+        { label: 'Vector Infrastructure', value: 'No Vector DB', subtext: 'Reasoning-driven retrieval using PageIndex\'s hierarchical document index — no embeddings, no vector DB, and no synchronization overhead.' },
+        { label: 'Retrieval Model', value: 'Context-Aware Reasoning', subtext: 'LLMs navigate structured PageIndex trees like a human expert, retrieving relevant sections through reasoning instead of similarity search.' },
+        { label: 'Memory Footprint', value: '100% Vectorless', subtext: 'Zero embedding storage, zero re-vectorization after document updates, and significantly lower infrastructure cost.' }
       ],
       pillars: [
-        { title: 'Page-Level Context Indexing', desc: 'Direct mapping of unstructured document pages to relational storage.' },
-        { title: 'Vectorless Reasoning Engine', desc: 'High-speed context extraction without full embedding recalculations.' }
+        { title: 'Human-like Retrieval', desc: 'LLMs reason over hierarchical PageIndex trees the way a human expert navigates a document.' },
+        { title: 'Explainable Retrieval', desc: 'Every retrieved section is traceable to a specific page node — no black-box similarity scores.' },
+        { title: 'No Vector DB', desc: 'Eliminates the need for a second vector database, reducing licensing cost and operational complexity.' },
+        { title: 'No Chunking', desc: 'Documents are indexed hierarchically, preserving full context without lossy chunking strategies.' },
+        { title: 'Context-Aware Reasoning', desc: 'Retrieval is guided by document structure and semantic hierarchy, not embedding proximity.' },
+        { title: 'Lower Infrastructure Cost', desc: 'No embedding pipelines, no vector sync jobs, and no re-indexing on document updates.' }
       ],
       detailedPitch: [
-        'Evaluating Page Index methodology to enable high-precision document reasoning directly over Db2 tables without heavy vector indexing pipelines.',
-        'Reduces infrastructure costs, eliminates vector synchronization hops, and enables enterprise databases to answer complex document queries instantaneously.'
+        'Evaluate PageIndex as a next-generation retrieval architecture for Db2 that replaces vector search with reasoning over hierarchical document indexes.',
+        'By leveraging relational storage and PageIndex tree structures, Db2 can support explainable, context-aware retrieval for enterprise documents without vector databases or chunking.',
+        'Strategic Opportunity: Integrate PageIndex as a vectorless retrieval layer on top of Db2 to explore hierarchical indexing, agentic reasoning, explainable enterprise RAG, and native long-document intelligence.',
+        'Db2\'s relational engine and native storage capabilities make it uniquely positioned to host PageIndex trees as structured tables — no additional infrastructure required.'
       ],
-      ask: 'Approve benchmark sandbox testing for Page Index integration within Db2 Dev Extension and Db2 kernel experiments.'
+      ask: 'Explore PageIndex Architecture & Db2 Integration Proposal — approve evaluation of PageIndex as a vectorless retrieval layer within Db2\'s existing relational and document storage engine.'
     }
   ];
 
@@ -310,12 +316,12 @@ export const InnovationProposalsPanel: React.FC = () => {
               </div>
             </div>
 
-            {/* Memory Pillars if present */}
+            {/* Pillars if present */}
             {selectedProposal.pillars && (
               <div className="space-y-2">
                 <h4 className="text-sm font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
                   <Brain className="w-4 h-4 text-purple-600" />
-                  <span>SDK Memory Architecture Pillars</span>
+                  <span>{selectedProposal.id === 'page-index-vectorless' ? 'Why PageIndex — Key Differentiators' : 'SDK Memory Architecture Pillars'}</span>
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {selectedProposal.pillars.map((p, idx) => (
