@@ -532,7 +532,7 @@ export const SOVEREIGN_INNOVATIONS = {
 export const GLOBAL_COLLABORATIONS = [
   {
     domain: 'Db2 Core Engineering',
-    leadNames: ['Mike Springgay', 'David Kalmuk', 'Matthew Emmerton']
+    leadNames: ['Mike Springgay', 'David Kalmuk', 'Matthew Emmerton', 'Cyrus NG', 'Nataliya Prokoshyna']
   },
   {
     domain: 'Vector Index Team',
