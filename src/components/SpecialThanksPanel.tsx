@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Heart, Star, Sparkles, Award, Users } from 'lucide-react';
+import { Heart, Sparkles, Award, Users } from 'lucide-react';
 
 const HONOREES = [
   {
     name: 'Gaurav',
-    role: 'Key Mentor & Sponsor',
+    avatarUrl: '/IBM DB2 TECH IMAGES/Gaurav_image.jpeg',
     color: 'from-blue-500 via-indigo-500 to-purple-600',
     ring: 'ring-blue-400',
     glow: 'shadow-blue-400/50',
@@ -12,7 +12,7 @@ const HONOREES = [
   },
   {
     name: 'Deepak',
-    role: 'Strategic Advisor & Guide',
+    avatarUrl: '/IBM DB2 TECH IMAGES/Deepak.jpeg',
     color: 'from-emerald-500 via-teal-500 to-cyan-600',
     ring: 'ring-emerald-400',
     glow: 'shadow-emerald-400/50',
@@ -20,7 +20,7 @@ const HONOREES = [
   },
   {
     name: 'Satya',
-    role: 'Visionary Leader & Support',
+    avatarUrl: '/IBM DB2 TECH IMAGES/Satya_image.jpeg',
     color: 'from-amber-500 via-orange-500 to-rose-500',
     ring: 'ring-amber-400',
     glow: 'shadow-amber-400/50',
@@ -73,7 +73,6 @@ export const SpecialThanksPanel: React.FC = () => {
         className="text-center space-y-4 z-10 transition-all duration-700"
         style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(24px)' }}
       >
-        {/* Sparkle row */}
         <div className="flex items-center justify-center gap-3">
           <Sparkles className="w-6 h-6 text-amber-400 animate-spin" style={{ animationDuration: '3s' }} />
           <span className="px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-black uppercase tracking-widest shadow-lg">
@@ -82,7 +81,6 @@ export const SpecialThanksPanel: React.FC = () => {
           <Sparkles className="w-6 h-6 text-amber-400 animate-spin" style={{ animationDuration: '3s', animationDirection: 'reverse' }} />
         </div>
 
-        {/* Main title */}
         <h1
           className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none"
           style={{
@@ -95,7 +93,6 @@ export const SpecialThanksPanel: React.FC = () => {
           A Special Thanks
         </h1>
 
-        {/* Pulsing heart row */}
         <div className="flex items-center justify-center gap-2">
           <Heart
             className={`w-7 h-7 text-rose-500 fill-rose-500 transition-transform duration-300 ${pulse ? 'scale-125' : 'scale-100'}`}
@@ -127,33 +124,25 @@ export const SpecialThanksPanel: React.FC = () => {
               style={{ boxShadow: cardsVisible[idx] ? `0 0 40px 8px var(--tw-shadow-color)` : 'none' }}
             >
               <div className="rounded-3xl bg-white p-7 text-center space-y-5 relative overflow-hidden">
-                {/* Background glow blob */}
                 <div className={`absolute -top-8 -right-8 w-32 h-32 rounded-full bg-gradient-to-br ${h.color} opacity-10 blur-2xl pointer-events-none`} />
 
-                {/* Avatar circle */}
-                <div className={`mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br ${h.color} flex items-center justify-center ring-4 ${h.ring} shadow-xl`}
+                {/* Avatar photo */}
+                <div
+                  className={`mx-auto w-24 h-24 rounded-2xl ring-4 ${h.ring} shadow-xl overflow-hidden`}
                   style={{ animation: cardsVisible[idx] ? `wobble 3s ease-in-out ${h.delay}ms infinite` : 'none' }}
                 >
-                  <span className="text-3xl font-black text-white">{h.name.charAt(0)}</span>
+                  <img
+                    src={h.avatarUrl}
+                    alt={h.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
-                {/* Star row */}
-                <div className="flex items-center justify-center gap-1">
-                  {[...Array(5)].map((_, si) => (
-                    <Star
-                      key={si}
-                      className="w-4 h-4 text-amber-400 fill-amber-400"
-                      style={{ animation: cardsVisible[idx] ? `starPop 0.4s ease-out ${h.delay + si * 80}ms both` : 'none' }}
-                    />
-                  ))}
-                </div>
-
-                <div className="space-y-1">
+                <div>
                   <h2 className="text-2xl sm:text-3xl font-black text-slate-900">{h.name}</h2>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{h.role}</p>
                 </div>
 
-                {/* Thank you badge */}
+                {/* Thank You badge */}
                 <div className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-gradient-to-r ${h.color} text-white text-xs font-black shadow-md`}>
                   <Heart className="w-3.5 h-3.5 fill-white" />
                   <span>Thank You!</span>
@@ -198,11 +187,6 @@ export const SpecialThanksPanel: React.FC = () => {
         @keyframes wobble {
           0%, 100% { transform: rotate(-2deg) scale(1);   }
           50%       { transform: rotate(2deg)  scale(1.05); }
-        }
-        @keyframes starPop {
-          0%   { transform: scale(0) rotate(-30deg); opacity: 0; }
-          60%  { transform: scale(1.3) rotate(10deg); opacity: 1; }
-          100% { transform: scale(1) rotate(0deg);   opacity: 1; }
         }
       `}</style>
     </div>
