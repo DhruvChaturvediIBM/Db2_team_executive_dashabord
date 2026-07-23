@@ -508,8 +508,11 @@ export const IN_PROGRESS_DATA = [
     status: 'Build in Progress',
     points: [
       'ARM64 pre-build phase has been completed successfully.',
-      'Currently resolving native build blockers and ensuring full test suite compatibility on 64-bit ARM servers.',
-      'Opens Db2 to a new generation of cloud-native and edge infrastructure deployments.',
+      'Currently focused on the Db2 client and server build phase — resolving native build issues and bringing up the Db2 engine.',
+      'Validating client and server functionality with a minimal feature set.',
+      'Once builds are stable, the team will enable the full test suite and ensure compatibility on 64-bit ARM servers.',
+      'Expands Db2 support to a new generation of ARM64-based cloud-native and edge infrastructure.',
+      'Expected infrastructure cost reduction of up to 40%.',
     ],
   },
   {

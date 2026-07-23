@@ -709,7 +709,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               <span>IBM BOB Tool Knowledge Sharing Session</span>
             </h3>
             <p className="text-sm sm:text-base text-indigo-100 font-medium leading-relaxed">
-              Dhruv Chaturvedi and Kunal Gola led an IBM Tech Exchange knowledge sharing session on developer productivity, with participation from the Kochi team and the Lucknow team. Both teams came together to demonstrate and present IBM BOB AI tools for accelerating software development workflows.
+             We led an IBM Tech Exchange knowledge sharing session on developer productivity, with participation from the Kochi team and the Lucknow team. Both teams came together to demonstrate and present IBM BOB AI tools for accelerating software development workflows.
             </p>
           </div>
 
