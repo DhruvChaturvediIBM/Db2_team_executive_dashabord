@@ -144,7 +144,7 @@ export const MemberProfileModal: React.FC<MemberProfileModalProps> = ({
                 )}
                 {(member.isExMember || member.exTag) && (
                   <span className="px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-black shadow-2xs">
-                    🏷️ {member.exTag || 'Ex-member from IBM Db2'}
+                    🏷️ {member.exTag || 'Past Team Member'}
                   </span>
                 )}
               </div>

@@ -241,8 +241,8 @@ export const TeamStructureOrgChart: React.FC = () => {
                         </p>
                         
                         {hasExTag ? (
-                          <span className="inline-block text-[11px] sm:text-xs font-black text-amber-900 bg-amber-100 border border-amber-300 px-2.5 py-0.5 rounded-md">
-                            Ex-member
+                          <span className="inline-block text-[11px] sm:text-xs font-black text-amber-900 bg-amber-100 border border-amber-300 px-2.5 py-0.5 rounded-md whitespace-nowrap">
+                            Past Team Member
                           </span>
                         ) : (
                           <p className="text-xs sm:text-sm text-slate-600 font-bold leading-snug break-words">

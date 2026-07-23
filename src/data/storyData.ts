@@ -25,7 +25,7 @@ export const PROJECT_TEAMS: ProjectTeam[] = [
   {
     id: 'db2-dev-extension',
     title: 'IBM Db2 Dev Extension',
-    leaders: ['Anant Vikram Singh'],
+    leaders: [],
     description: 'GAed VS Code extension with Text-to-SQL, 2 security patch releases & Genius Hub integration.',
     members: [
       'Ayush Rastogi',
@@ -67,27 +67,27 @@ export const PROJECT_TEAMS: ProjectTeam[] = [
     title: 'DB2 AI Ecosystem Enablement',
     leaders: ['Priyanshu Krishnan'],
     description: 'Community collaborations & framework drivers for generative AI workflows.',
-    members: ['Anant Vikram Singh', 'Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Pawan Thakur', 'Geetika Chugh'],
+    members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Pawan Thakur', 'Geetika Chugh'],
     subProjects: [
       {
         name: 'Langflow Integration',
-        members: ['Priyanshu Krishnan', 'Anant Vikram Singh', 'Dhruv Chaturvedi']
+        members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi']
       },
       {
         name: 'Haystack Integration',
-        members: ['Priyanshu Krishnan', 'Anant Vikram Singh', 'Dhruv Chaturvedi', 'Geetika Chugh']
+        members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Geetika Chugh']
       },
       {
         name: 'CrewAI Framework',
-        members: ['Priyanshu Krishnan', 'Anant Vikram Singh', 'Dhruv Chaturvedi', 'Geetika Chugh', 'Pawan Thakur']
+        members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Geetika Chugh', 'Pawan Thakur']
       },
       {
         name: 'n8n Workflow Connector',
-        members: ['Priyanshu Krishnan', 'Anant Vikram Singh', 'Dhruv Chaturvedi', 'Geetika Chugh']
+        members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi', 'Geetika Chugh']
       },
       {
         name: 'Microsoft Agent Framework',
-        members: ['Priyanshu Krishnan', 'Anant Vikram Singh', 'Dhruv Chaturvedi']
+        members: ['Priyanshu Krishnan', 'Dhruv Chaturvedi']
       }
     ]
   },
@@ -133,7 +133,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     bio: 'Core developer for Db2 Dev Extension and contributor to Db2 Linux ARM64 native build and platform pre-builds.',
     avatarUrl: '/team_photos/Ayush.jpg',
     isExMember: true,
-    exTag: 'Ex-member',
+    exTag: 'Past Team Member',
     projects: ['IBM Db2 Dev Extension', 'Db2 Linux ARM Team'],
     skills: ['ARM64 Linux', 'VS Code Extension', 'C++', 'TypeScript']
   },
@@ -144,7 +144,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     bio: 'Core engineer involved across 6+ key initiatives: IBM Db2 Dev Extension VS Code GA product, Text-to-SQL AI integrations, AI Ecosystem connectors (Langflow 30k+ downloads, Haystack, CrewAI, n8n), IP.com Defensive Publication co-author, and featured on official IBM Life at IBM social media pages. Designer & Developer of this Executive Review Platform.',
     avatarUrl: '/team_photos/Dhruv_chaturvedi.jpg',
     isExMember: true,
-    exTag: 'Ex-member',
+    exTag: 'Past Team Member',
     projects: ['IBM Db2 Dev Extension', 'Langflow Connector (30k+ downloads)', 'Haystack Integration', 'CrewAI Framework', 'n8n Workflow Connector', 'IP.com Defensive Publication', 'Life at IBM Spotlight'],
     skills: ['React', 'TypeScript', 'Db2', 'Text-to-SQL', 'AI Agents', 'Langflow', 'Haystack', 'IP.com Author']
   },
@@ -209,7 +209,7 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
     bio: 'Contributes to both Db2 Dev Extension features and ARM64 platform pre-build validation.',
     avatarUrl: '/team_photos/Kunal_Gola.jpg',
     isExMember: true,
-    exTag: 'Ex-member',
+    exTag: 'Past Team Member',
     projects: ['IBM Db2 Dev Extension', 'Db2 Linux ARM Team'],
     skills: ['ARM64 Linux', 'Dev Tools', 'Automation']
   },

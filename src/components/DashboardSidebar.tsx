@@ -37,12 +37,12 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
     { id: 'org-structure', label: 'Team Structure', icon: Users, badge: 'Main' },
     { id: 'achievements', label: 'Achievements', icon: Trophy, badge: 'GA +' },
     { id: 'in-progress', label: 'In Progress', icon: Clock, badge: 'Active' },
-    { id: 'collaborations', label: 'Global Synergy', icon: Globe2 },
     { id: 'challenges', label: 'Process & PDLC', icon: ShieldAlert },
     { id: 'innovation-proposals', label: 'Innovation Proposals', icon: Lightbulb, badge: 'New' },
     { id: 'productivity', label: 'Productivity & Media', icon: Video, badge: 'Demos' },
     { id: 'ai-adoption', label: 'AI Productivity', icon: Bot, badge: '8-10x' },
-    { id: '3d-gallery', label: '3D Gallery', icon: Camera, badge: `${memoryCount}` },
+    { id: 'collaborations', label: 'Global Synergy', icon: Globe2 },
+    { id: '3d-gallery', label: 'Fun Moments', icon: Camera, badge: `${memoryCount}` },
   ];
 
   const handleTabChange = (tab: DashboardTab) => {
