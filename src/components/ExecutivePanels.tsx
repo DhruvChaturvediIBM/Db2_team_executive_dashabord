@@ -642,9 +642,11 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                 </span>
                 <AlertTriangle className="w-5 h-5 text-amber-500" />
               </div>
-              <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium pt-1">
-                {ch.issue}
-              </p>
+              {ch.issue && (
+                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium pt-1">
+                  {ch.issue}
+                </p>
+              )}
               {(ch as any).points && (
                 <ul className="space-y-1.5 pt-1 border-t border-amber-100">
                   {(ch as any).points.map((pt: string, i: number) => (

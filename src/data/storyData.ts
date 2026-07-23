@@ -536,7 +536,7 @@ export const GLOBAL_COLLABORATIONS = [
   },
   {
     domain: 'Vector Index Team',
-    leadNames: ['Christian Garcia', 'Zach Hoggard', 'Francis Wong']
+    leadNames: ['Christian Garcia', 'Francis Wong']
   },
   {
     domain: 'Security Engineering',
@@ -568,12 +568,18 @@ export const CHALLENGES_PROCESS = [
   {
     id: 'ch-1',
     area: 'Product Management & PDLC Alignment',
-    issue: 'Limited involvement from product management in the PDLC process. Git issues are not being created in a timely manner, creating gaps in sprint planning and traceability. Additionally, timely responses from the product team (Vijaya) are not consistently received, leading to blockers on requirement clarifications and sign-offs. UI team alignment also remains a challenge — key features like Text-to-SQL were integrated without prior UX input.'
+    issue: '',
+    points: [
+      'Limited involvement from product management in the PDLC process.',
+      'Git issues are not being created in a timely manner, creating gaps in sprint planning and traceability.',
+      'Timely responses from the product team are not consistently received, leading to blockers on requirement clarifications and sign-offs.',
+      'UI team alignment remains a challenge — key features like Text-to-SQL were integrated without prior UX input.',
+    ]
   },
   {
     id: 'ch-2',
     area: 'AIX PR Bottleneck',
-    issue: 'Single reviewer (Zach) with no backup caused PR delays, leading to merge conflicts requiring AIX builds & validation reruns — ~3× turnaround delay.',
+    issue: 'Single reviewer with no backup caused PR delays, leading to merge conflicts requiring AIX builds & validation reruns — ~3× turnaround delay.',
     points: [
       'No designated backup reviewer; full dependency on one person blocked the review cycle.',
       'Merge conflicts from delayed reviews required our team to rerun AIX builds & validation tests.',
@@ -584,12 +590,22 @@ export const CHALLENGES_PROCESS = [
   {
     id: 'ch-3',
     area: 'Release Process Predictability',
-    issue: 'Release team introduces new steps at critical stages, impacting timeline predictability.'
+    issue: '',
+    points: [
+      'Release team introduces new steps at critical stages, impacting timeline predictability.',
+      'Late-stage process changes increase risk and reduce delivery confidence.',
+      'Earlier visibility into release requirements would improve planning accuracy.',
+    ]
   },
   {
     id: 'ch-4',
     area: 'UX Expert Involvement',
-    issue: 'UX experts limited in product development (e.g. Text-to-SQL integrated without prior UX input).'
+    issue: '',
+    points: [
+      'UX experts have limited involvement in product development.',
+      'Key features like Text-to-SQL were integrated without prior UX input.',
+      'Earlier UX engagement would improve usability and reduce rework cycles.',
+    ]
   }
 ];
 
