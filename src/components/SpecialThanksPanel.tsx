@@ -43,7 +43,6 @@ export const SpecialThanksPanel: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [cardsVisible, setCardsVisible] = useState([false, false, false]);
   const [pulse, setPulse] = useState(false);
-
   useEffect(() => {
     const t1 = setTimeout(() => setVisible(true), 100);
     const t2 = setTimeout(() => setCardsVisible([true, false, false]), 500);
@@ -151,6 +150,23 @@ export const SpecialThanksPanel: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* YouTube Video — preloaded on mount, plays instantly on click */}
+      <div
+        className="mt-12 w-full max-w-3xl z-10 transition-all duration-700"
+        style={{ opacity: cardsVisible[2] ? 1 : 0, transform: cardsVisible[2] ? 'translateY(0)' : 'translateY(20px)' }}
+      >
+        <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-slate-200/80 bg-black aspect-video">
+          <iframe
+            src="https://www.youtube.com/embed/TopQNPhvlsY?rel=0&modestbranding=1&loading=eager"
+            title="IBM Db2 Lucknow Team Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="eager"
+            className="w-full h-full"
+          />
+        </div>
       </div>
 
       {/* Bottom message */}
