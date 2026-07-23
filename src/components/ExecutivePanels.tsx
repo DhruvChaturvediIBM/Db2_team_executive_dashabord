@@ -146,10 +146,10 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
             if (ach.id === 'ach-ga') {
               const bd = (ach as any).backDetails;
               return (
-                <div key={ach.id} className="perspective-1000 min-h-[420px]">
+                <div key={ach.id} className="perspective-1000" style={{ minHeight: '400px' }}>
                   <div
                     className="relative w-full h-full transition-transform duration-700 preserve-3d"
-                    style={{ transform: gaFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '420px' }}
+                    style={{ transform: gaFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '400px' }}
                   >
                     {/* FRONT */}
                     <div className="absolute inset-0 backface-hidden rounded-3xl bg-white border-2 border-blue-200 shadow-sm hover:shadow-xl hover:border-blue-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
@@ -529,6 +529,16 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium pt-1">
                 {ch.issue}
               </p>
+              {(ch as any).points && (
+                <ul className="space-y-1.5 pt-1 border-t border-amber-100">
+                  {(ch as any).points.map((pt: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium leading-relaxed">
+                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
@@ -592,10 +602,10 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
           <div className="space-y-2">
             <h3 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
               <Bot className="w-6 h-6 text-indigo-400 shrink-0" />
-              <span>IBM BOB Tool Global Knowledge Sharing Session</span>
+              <span>IBM BOB Tool Knowledge Sharing Session</span>
             </h3>
             <p className="text-sm sm:text-base text-indigo-100 font-medium leading-relaxed">
-              Dhruv Chaturvedi led an interactive global IBM Tech Exchange knowledge sharing session on developer productivity. The VS Code Extension team and multiple cross-functional IBM engineering teams came together to demonstrate and present IBM BOB AI tools for accelerating software development workflows.
+              Dhruv Chaturvedi led an IBM Tech Exchange knowledge sharing session on developer productivity, with participation from the Kochi team and the Lucknow team. Both teams came together to demonstrate and present IBM BOB AI tools for accelerating software development workflows.
             </p>
           </div>
 
@@ -607,7 +617,7 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               🤖 IBM BOB AI Productivity Tools
             </span>
             <span className="px-3 py-1 rounded-xl bg-indigo-800/60 border border-indigo-600/50 text-indigo-100 text-xs font-bold">
-              🌐 Global Tech Exchange
+              🏢 Kochi & Lucknow Teams
             </span>
           </div>
         </div>

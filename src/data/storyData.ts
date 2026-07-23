@@ -530,7 +530,13 @@ export const CHALLENGES_PROCESS = [
   {
     id: 'ch-2',
     area: 'AIX PR Bottleneck',
-    issue: 'PR reviews bottlenecked due to single point of contact (e.g. Zach) without backup substitutes.'
+    issue: 'Single reviewer (Zach) with no backup caused PR delays, leading to merge conflicts requiring AIX builds & validation reruns — ~3× turnaround delay.',
+    points: [
+      'No designated backup reviewer; full dependency on one person blocked the review cycle.',
+      'Merge conflicts from delayed reviews required our team to rerun AIX builds & validation tests.',
+      'Undefined target platform upfront — team shifted Power10 → Power8 → Power9, causing repeated rework.',
+      'Clearer platform definition at project start would have eliminated unnecessary context switching.',
+    ]
   },
   {
     id: 'ch-3',
@@ -553,7 +559,7 @@ export const AI_ADOPTION_METRICS = [
   {
     metric: 'IBM BOB Tool',
     label: 'Tech Exchange (Led by Dhruv)',
-    desc: 'Led global IBM BOB knowledge sharing session where VS Code team & multiple IBM teams presented AI productivity tools.'
+    desc: 'Led IBM BOB knowledge sharing session with the Kochi & Lucknow teams, presenting AI productivity tools.'
   },
   {
     metric: 'Market Footprint',
@@ -922,7 +928,7 @@ export const IBM_VALUE_THOUGHTS = [
   },
   {
     category: "Platform Creation",
-    thought: "Designed and Developed by Dhruv Chaturvedi for the IBM Db2 Lucknow Engineering Executive Review Showcase.",
+    thought: "Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi for the IBM Db2 Lucknow Engineering Executive Review Showcase.",
     author: "Dashboard Credits"
   }
 ];

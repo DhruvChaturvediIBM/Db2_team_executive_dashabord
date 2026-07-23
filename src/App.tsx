@@ -100,9 +100,9 @@ export default function App() {
     : memories;
 
   return (
-    <div className="min-h-screen mesh-gradient-bg text-[#161616] font-sans antialiased flex flex-col lg:flex-row overflow-x-hidden selection:bg-[#0f62fe] selection:text-white">
-      
-      {/* Left Sidebar Navigation (Collapsible) */}
+    <div className="min-h-screen mesh-gradient-bg text-[#161616] font-sans antialiased flex flex-row overflow-x-hidden selection:bg-[#0f62fe] selection:text-white">
+
+      {/* Left Sidebar — fixed overlay on mobile, static column on lg+ */}
       {!isSidebarCollapsed && (
         <DashboardSidebar
           activeTab={activeTab}
@@ -131,7 +131,7 @@ export default function App() {
         />
 
         {/* Dashboard Content Container */}
-        <div className="flex-1 p-4 sm:p-8 max-w-7xl w-full mx-auto space-y-6">
+        <div className="flex-1 p-3 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-4 sm:space-y-6">
           
           {/* Section 1: Team Structure (Org Chart) */}
           {activeTab === 'org-structure' && (
@@ -199,7 +199,7 @@ export default function App() {
         <footer className="mt-auto border-t border-slate-200/80 bg-white/80 backdrop-blur-md py-4 px-6 text-center text-xs text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>IBM Db2 Lucknow • Executive Review & Team Showcase</span>
           <span className="font-extrabold text-[#0f62fe] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-            Designed and Developed by Dhruv Chaturvedi
+            Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi
           </span>
         </footer>
       </main>

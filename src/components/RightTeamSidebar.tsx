@@ -239,7 +239,7 @@ export const RightTeamSidebar: React.FC<RightTeamSidebarProps> = ({
         <div className="p-4 border-t border-slate-200 bg-slate-50 text-center">
           <p className="text-[11px] font-bold text-slate-600 flex items-center justify-center gap-1.5">
             <Heart className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-            <span>Designed & Developed by Dhruv Chaturvedi</span>
+            <span>Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi</span>
           </p>
         </div>
 

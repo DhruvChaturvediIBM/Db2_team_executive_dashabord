@@ -198,10 +198,10 @@ export const TeamStructureOrgChart: React.FC = () => {
                     {getProjectIcon(project.id)}
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight whitespace-nowrap">
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-slate-500 font-medium truncate max-w-2xl">
+                    <p className="text-xs text-slate-500 font-medium line-clamp-2">
                       {project.description}
                     </p>
                   </div>
@@ -215,7 +215,7 @@ export const TeamStructureOrgChart: React.FC = () => {
               </div>
 
               {/* FULL WIDTH MEMBERS GRID with WIDER boxes & wrapped names */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                 {allMembers.map((memberName) => {
                   const profile = memberProfiles[memberName];
                   const hasExTag = showExTagForMember(memberName, project.id);
@@ -226,7 +226,7 @@ export const TeamStructureOrgChart: React.FC = () => {
                       className="p-3.5 rounded-2xl bg-slate-50/90 border-2 border-slate-200/90 hover:bg-blue-50 hover:border-[#0f62fe] transition-all flex items-center gap-3.5 text-left group cursor-pointer w-full"
                     >
                       {/* Bigger Photo */}
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-sm group-hover:scale-105 transition-transform overflow-hidden relative border border-slate-200">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-sm group-hover:scale-105 transition-transform overflow-hidden relative border border-slate-200">
                         {profile?.avatarUrl ? (
                           <img src={profile.avatarUrl} alt={memberName} className="w-full h-full object-cover" />
                         ) : (
@@ -273,7 +273,7 @@ export const TeamStructureOrgChart: React.FC = () => {
                   {getProjectIcon(project.id)}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-base sm:text-lg font-black text-slate-900 whitespace-nowrap truncate">
+                  <h3 className="text-sm sm:text-base font-black text-slate-900">
                     {project.title}
                   </h3>
                   <p className="text-xs text-slate-500 font-medium truncate">
@@ -327,7 +327,7 @@ export const TeamStructureOrgChart: React.FC = () => {
               Executive Review Platform
             </span>
             <h3 className="text-base sm:text-lg font-black text-white whitespace-nowrap">
-              Designed & Developed by Dhruv Chaturvedi
+              Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi
             </h3>
           </div>
         </div>

@@ -259,7 +259,7 @@ export const MemberProfileModal: React.FC<MemberProfileModalProps> = ({
           {/* Footer Developer Credit */}
           <div className="pt-5 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500 font-medium">
             <span>IBM Db2 Lucknow Engineering</span>
-            <span className="font-extrabold text-[#0f62fe]">Designed & Developed by Dhruv Chaturvedi</span>
+            <span className="font-extrabold text-[#0f62fe]">Made with ❤️ by Pawan Thakur & Dhruv Chaturvedi</span>
           </div>
 
         </div>
