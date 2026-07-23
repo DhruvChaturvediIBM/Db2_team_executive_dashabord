@@ -528,7 +528,6 @@ export const IN_PROGRESS_DATA = [
     title: 'VS Code Extension Text-to-SQL & Feature Enhancements',
     status: 'In Progress',
     points: [
-      'Extension is already GA and live on the VS Code Marketplace.',
       'Deeper Genius Hub Text-to-SQL integration and schema-aware query suggestions in active development.',
       'Improved connection manager UX and AI-assisted developer workflows being shipped in the next feature release.',
     ],
