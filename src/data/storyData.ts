@@ -316,6 +316,19 @@ export const DEFAULT_MEMBER_PROFILES: Record<string, MemberProfile> = {
 
 export const ACHIEVEMENTS_DATA = [
   {
+    id: 'ach-conf-ayush',
+    category: 'Customer Conference',
+    title: 'ISA IBM Data & AI User Group Meeting — Db2 Modern Features',
+    metric: 'IBM Technical Exchange',
+    presenter: 'Ayush Rastogi',
+    imageUrl: '/IBM DB2 TECH IMAGES/Db2_vs_code_Extension_release_ayush.jpeg',
+    details: [
+      'Ayush Rastogi presented IBM Db2 Modern Features alongside Deepak at the ISA IBM Data & AI User Group Meeting, sponsored by IBM Technical Exchange.',
+      'Delivered a client-focused session showcasing Apache Iceberg integration, AI capabilities in Db2, Vector Search, and the Db2 Intelligence Center.',
+      'Highlighted how these modern data platform enhancements enable intelligent, scalable, and AI-ready data management for enterprise customers.'
+    ]
+  },
+  {
     id: 'ach-conf-dhruv',
     category: 'Customer Conference',
     title: 'Db2 Technical Advisory Board (TAB) — OSS Live Demo',
@@ -342,19 +355,6 @@ export const ACHIEVEMENTS_DATA = [
     ]
   },
   {
-    id: 'ach-conf-ayush',
-    category: 'Customer Conference',
-    title: 'ISA IBM Data & AI User Group Meeting — Db2 Modern Features',
-    metric: 'IBM Technical Exchange',
-    presenter: 'Ayush Rastogi',
-    imageUrl: '/IBM DB2 TECH IMAGES/Db2_vs_code_Extension_release_ayush.jpeg',
-    details: [
-      'Ayush Rastogi presented IBM Db2 Modern Features alongside Deepak at the ISA IBM Data & AI User Group Meeting, sponsored by IBM Technical Exchange.',
-      'Delivered a client-focused session showcasing Apache Iceberg integration, AI capabilities in Db2, Vector Search, and the Db2 Intelligence Center.',
-      'Highlighted how these modern data platform enhancements enable intelligent, scalable, and AI-ready data management for enterprise customers.'
-    ]
-  },
-  {
     id: 'ach-ga',
     category: 'Product GA & Release',
     title: 'IBM Db2 Developer Extension — GA Released on VS Code Marketplace 🚀',
@@ -378,6 +378,27 @@ export const ACHIEVEMENTS_DATA = [
         'Enhance AI-powered developer experience with Text-to-SQL & Genius Hub integration.',
         'Leverage telemetry-driven insights to optimize onboarding, retention & adoption.',
         'Organize developer hackathons using IBM Db2 + Developer Extension for hands-on adoption.',
+      ],
+    },
+  },
+  {
+    id: 'ach-vector',
+    category: 'Vector Index Team Achievement',
+    title: 'Vector Index — DiskANN on Linux AMD64 & IBM AIX (POWER) 🧠',
+    metric: 'Cross-Platform Delivery',
+    details: [
+      'DiskANN Support on Linux (AMD64): Integrated OpenBLAS as the linear algebra backend, replacing Intel MKL — reducing proprietary library dependency and improving portability.',
+      'Simplified deployment across Linux AMD64 environments and established a foundation for broader platform support.',
+      'Vector Index on IBM AIX (POWER): Successfully delivered DiskANN support on IBM AIX — enabling AI-powered vector search on IBM Power Systems.',
+      'Addressed compiler compatibility and optimized library integration for enterprise POWER customers running RAG and AI workloads.',
+    ],
+    backDetails: {
+      businessImpact: [
+        '🚀 Expanded Vector Index availability across both Linux AMD64 and IBM AIX (POWER).',
+        '🌐 Increased adoption of open-source technologies by transitioning from Intel MKL to OpenBLAS.',
+        '🤖 Strengthened Db2\'s readiness for modern AI, semantic search, and vector database workloads.',
+        '💼 Enhanced value for enterprise customers running mission-critical workloads on IBM Power Systems.',
+        '📈 Positioned the Vector Index team to accelerate future performance improvements and platform expansion.',
       ],
     },
   },

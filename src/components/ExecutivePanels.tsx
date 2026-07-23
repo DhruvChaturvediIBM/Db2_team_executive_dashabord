@@ -120,6 +120,8 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
   if (type === 'achievements') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [gaFlipped, setGaFlipped] = useState(false);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [vectorFlipped, setVectorFlipped] = useState(false);
 
     return (
       <div className="space-y-6 animate-in fade-in duration-300">
@@ -243,6 +245,126 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
               );
             }
 
+            /* ── FLIP CARD for ach-vector ── */
+            if (ach.id === 'ach-vector') {
+              const bd = (ach as any).backDetails;
+              return (
+                <div key={ach.id} className="perspective-1000" style={{ minHeight: '400px' }}>
+                  <div
+                    className="relative w-full h-full transition-transform duration-700 preserve-3d"
+                    style={{ transform: vectorFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', minHeight: '400px' }}
+                  >
+                    {/* FRONT */}
+                    <div className="absolute inset-0 backface-hidden rounded-3xl bg-white border-2 border-emerald-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-shadow flex flex-col justify-between p-6 sm:p-7">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between border-b border-slate-100/80 pb-3 gap-2 flex-wrap">
+                          <span className="px-3 py-1 rounded-xl text-xs font-black uppercase tracking-wider border bg-emerald-100 text-emerald-800 border-emerald-200">
+                            {ach.category}
+                          </span>
+                          <span className="text-xs sm:text-sm font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200 shadow-2xs">
+                            {ach.metric}
+                          </span>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">{ach.title}</h3>
+                        <ul className="space-y-3 pt-1">
+                          {ach.details.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-sm text-slate-800 font-medium leading-relaxed">
+                              <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-emerald-600" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <button
+                        onClick={() => setVectorFlipped(true)}
+                        className="mt-4 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition-all shadow-md"
+                      >
+                        <TrendingUp className="w-3.5 h-3.5 shrink-0" />
+                        View Business Impact
+                      </button>
+                    </div>
+
+                    {/* BACK */}
+                    <div
+                      className="absolute inset-0 backface-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-teal-900 text-white border-2 border-emerald-500/40 shadow-xl flex flex-col p-5 sm:p-6 overflow-y-auto"
+                      style={{ transform: 'rotateY(180deg)' }}
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-black uppercase tracking-widest text-emerald-300">Business Impact</span>
+                        <button
+                          onClick={() => setVectorFlipped(false)}
+                          className="text-xs font-black text-emerald-300 hover:text-white transition-colors px-3 py-1 rounded-lg border border-emerald-500/40 hover:border-white/40"
+                        >
+                          ← Back
+                        </button>
+                      </div>
+                      <div className="space-y-2.5">
+                        {bd.businessImpact.map((point: string, i: number) => (
+                          <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-emerald-100 font-medium leading-relaxed">
+                            {point}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            /* ── COVER IMAGE cards for conferences with imageUrl ── */
+            if ((ach as any).imageUrl && ach.id.startsWith('ach-conf')) {
+              const presenter = (ach as any).presenter as string;
+              const imageUrl = (ach as any).imageUrl as string;
+              return (
+                <div
+                  key={ach.id}
+                  className="rounded-3xl bg-white border-2 border-teal-200 hover:border-teal-400 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col"
+                >
+                  {/* Cover Image */}
+                  <div className="relative w-full h-52 sm:h-60 overflow-hidden shrink-0">
+                    <img
+                      src={imageUrl}
+                      alt={ach.title}
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+                    {/* Presenter tag top-left */}
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/70 backdrop-blur-sm border border-white/20 text-white text-xs font-black">
+                      <Users className="w-3.5 h-3.5 text-teal-300 shrink-0" />
+                      <span>{presenter}</span>
+                    </div>
+                    {/* Category badge top-right */}
+                    <span className="absolute top-3 right-3 px-3 py-1 rounded-xl bg-teal-500/90 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-wider border border-teal-300/30">
+                      {ach.category}
+                    </span>
+                    {/* Title overlay bottom */}
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <h3 className="text-base sm:text-lg font-black text-white leading-snug drop-shadow-lg">
+                        {ach.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Card body */}
+                  <div className="p-5 flex flex-col flex-1 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                        {ach.metric}
+                      </span>
+                    </div>
+                    <ul className="space-y-2.5">
+                      {ach.details.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-teal-600" />
+                          <span>{renderDetailText(item)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            }
+
             /* ── Standard cards for all others ── */
             return (
               <div
@@ -252,8 +374,6 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                     ? 'border-indigo-300 bg-gradient-to-br from-white via-indigo-50/20 to-blue-50/30'
                     : ach.id === 'ach-social'
                     ? 'border-purple-300 bg-gradient-to-br from-white via-purple-50/20 to-pink-50/30'
-                    : ach.id.startsWith('ach-conf')
-                    ? 'border-teal-200 bg-gradient-to-br from-white via-teal-50/20 to-emerald-50/20 hover:border-teal-400'
                     : 'hover:border-blue-400'
                 }`}
               >
@@ -264,8 +384,6 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                         ? 'bg-indigo-100 text-indigo-800 border-indigo-200'
                         : ach.id === 'ach-social'
                         ? 'bg-purple-100 text-purple-800 border-purple-200'
-                        : ach.id.startsWith('ach-conf')
-                        ? 'bg-teal-100 text-teal-800 border-teal-200'
                         : 'bg-blue-100 text-[#0f62fe] border-blue-200'
                     }`}>
                       {ach.category}
@@ -289,8 +407,6 @@ export const ExecutivePanels: React.FC<ExecutivePanelsProps> = ({ type, onSelect
                             ? 'text-indigo-600'
                             : ach.id === 'ach-social'
                             ? 'text-purple-600'
-                            : ach.id.startsWith('ach-conf')
-                            ? 'text-teal-600'
                             : 'text-[#0f62fe]'
                         }`} />
                         <span>{renderDetailText(item)}</span>
